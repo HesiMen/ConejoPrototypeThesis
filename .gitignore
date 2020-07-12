@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+/RabbitCoyote/[Ll]ibrary/
+/RabbitCoyote/[Tt]emp/
+/RabbitCoyote/[Oo]bj/
+/RabbitCoyote/[Bb]uild/
+/RabbitCoyote/[Bb]uilds/
+/RabbitCoyote/[Ll]ogs/
+/RabbitCoyote/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -57,4 +57,10 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+/RabbitCoyote/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+/RabbitCoyote/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
+/RabbitCoyote/Assets/StreamingAssets/**/*.bank
+/RabbitCoyote/Assets/StreamingAssets/**/*.bank.meta
+/RabbitCoyote/fmod_editor.log
 
