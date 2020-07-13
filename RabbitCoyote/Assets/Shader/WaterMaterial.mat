@@ -29,11 +29,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Depth: -0.3
-    - _Displacement: 0.15
-    - _NormalStrength: 0.48
-    - _Smoothness: 1.36
-    - _Strength: 2
+    - Vector1_345239DA: 9999
+    - Vector1_C3FD2B1B: 0.64
+    - _Depth: -0.4
+    - _Displacement: 0.0002
+    - _NormalStrength: 1.42
+    - _Smoothness: 5.37
+    - _Strength: 1.95
+    - _WaveSpeed: 200
     m_Colors:
-    - _DeepWaterColor: {r: 0.056737147, g: 0.5070627, b: 0.55294114, a: 0.6039216}
-    - _ShallwoColorWater: {r: 0, g: 0.7651213, b: 0.8113207, a: 0.36862746}
+    - Color_B36C7D9D: {r: 0, g: 0, b: 0, a: 0}
+    - _DeepWaterColor: {r: 0, g: 0.49290785, b: 0.5660378, a: 0.8352941}
+    - _ShallwoColorWater: {r: 0.7372549, g: 1, b: 0.97061706, a: 0.34117648}
