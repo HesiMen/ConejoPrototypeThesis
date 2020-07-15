@@ -80,5 +80,6 @@ MonoBehaviour:
   - Master
   Banks:
   - ConejoBankTest
+  - CoyoteSFX
   BanksToLoad: []
   LiveUpdatePort: 9264
