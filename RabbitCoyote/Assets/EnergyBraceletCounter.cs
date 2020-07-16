@@ -112,7 +112,6 @@ public class EnergyBraceletCounter : MonoBehaviour
             lerpActuator -= Time.deltaTime * fadeRate;
             if (lerpActuator < 0f)
             {
-                Debug.Log("What is going on?");
                 if (energyIndex > 0) energyIndex--;
 
                 lerpActuator = energyBlocks[energyIndex].GetComponent<ShaderFillDataManger>().fill;
@@ -127,7 +126,6 @@ public class EnergyBraceletCounter : MonoBehaviour
             lerpActuator += Time.deltaTime * fadeRate;
             if (lerpActuator > 1f)
             {
-                Debug.Log("What is going on?");
                 if (energyIndex < energyBlocks.Length - 1) energyIndex++;
 
                 lerpActuator = energyBlocks[energyIndex].GetComponent<ShaderFillDataManger>().fill;
