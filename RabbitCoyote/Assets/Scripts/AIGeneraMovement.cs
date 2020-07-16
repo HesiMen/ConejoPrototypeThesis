@@ -20,6 +20,7 @@ public class AIGeneraMovement : MonoBehaviour
     public float ToTrot = 6f;
     public float ToRun = 8f;
 
+    [SerializeField] private bool _isBunny;
 
 
     public bool debug = false;                //Debuging 
@@ -43,44 +44,40 @@ public class AIGeneraMovement : MonoBehaviour
 
     void Start()
     {
-       // if (autoSpeed) AutomaticSpeed();
+        // if (autoSpeed) AutomaticSpeed();
 
         animal = GetComponent<Animal>();
+        if (!_isBunny)
+        {
+            target = RandomNavmeshLocation(wanderRadious);
 
-        target = RandomNavmeshLocation(wanderRadious);
+            agent.stoppingDistance = stoppingDistance;
+            //StartCoroutine(StartChasing());
+            AssignMovementTask(target);
 
-        agent.stoppingDistance = stoppingDistance;
-        //StartCoroutine(StartChasing());
-        AssignMovementTask(target);
-        animal.Move(target);
+
+
+        }
     }
 
     private void Update()
     {
 
 
-       /*
-        Vector3 Direction = Vector3.zero;
-        if (agent.remainingDistance > agent.stoppingDistance)
-        {
-            Direction = agent.desiredVelocity.normalized;
-            isMoving = true;
 
+        if (!_isBunny)
+        {
+
+            if (HasReachedPos())
+            {
+                animal.Action = true;
+                StartCoroutine(StartChasing());
+            }
         }
         else
         {
-            animal.Action = true;
-            StartCoroutine(StartChasing());
-        }
-        */
 
-        
-        if (HasReachedPos())
-        {
-            animal.Action = true;
-            StartCoroutine(StartChasing());
         }
-        
 
 
     }
@@ -103,7 +100,7 @@ public class AIGeneraMovement : MonoBehaviour
     {
 
         agent.SetDestination(goalPos);
-
+        animal.Move(goalPos);
     }
 
     public bool HasReachedPos()
@@ -132,7 +129,7 @@ public class AIGeneraMovement : MonoBehaviour
         target = RandomNavmeshLocation(wanderRadious);
         Agent.isStopped = false;
         AssignMovementTask(target);
-        animal.Move(target);
+        //  animal.Move(target);
     }
 
     public virtual void AutomaticSpeed()
@@ -155,11 +152,11 @@ public class AIGeneraMovement : MonoBehaviour
     {
         if (debug)
         {
-           
-                Debug.DrawLine(transform.position, target, Color.green);
-            
+
+            Debug.DrawLine(transform.position, target, Color.green);
+
         }
     }
 
-   
+
 }
