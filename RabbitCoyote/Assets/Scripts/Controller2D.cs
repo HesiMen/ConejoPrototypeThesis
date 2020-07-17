@@ -7,6 +7,9 @@ public class Controller2D : MonoBehaviour
     private Camera mainCamera;
     [SerializeField] AIGeneraMovement bunny;
 
+    [SerializeField]
+    private Transform bunnyMoveTarget;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +25,11 @@ public class Controller2D : MonoBehaviour
         
         //Sends Raycast on click to set waypoint for attached animal AI
         if (Physics.Raycast(ray, out hit) && Input.GetMouseButtonDown(0)) {
-            Transform objectHit = hit.transform;
-
-            bunny.AssignMovementTask(hit.point);
+            //Transform objectHit = hit.transform;
+            bunnyMoveTarget.position = hit.point;
+            //bunny.AssignMovementTask(bunnyMoveTarget.position);
+            //bunny.AssignMovementTask(hit.point);
         }
+        bunny.AssignMovementTask(bunnyMoveTarget.position);
     }
 }

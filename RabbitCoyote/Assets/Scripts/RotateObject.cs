@@ -20,6 +20,14 @@ public class RotateObject : MonoBehaviour
         {
             mPosDelta = Input.mousePosition - mPrevPos;
             transform.Rotate(transform.up, -Vector3.Dot(mPosDelta * rotationSpeed, Camera.main.transform.right), Space.World);
+            Time.timeScale = 0f;
+            Time.fixedDeltaTime = 0f;
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            Time.timeScale = 1f;
+            Time.fixedDeltaTime = Time.timeScale * 0.02f;
         }
 
         mPrevPos = Input.mousePosition;
