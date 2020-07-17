@@ -400,6 +400,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &457871784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457871770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b81791532ec1949863684e961abf12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &457871785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +433,8 @@ MonoBehaviour:
   autoSpeed: 1
   ToTrot: 6
   ToRun: 8
+  _isChase: 0
+  bunnyGO: {fileID: 1113989090}
   _isBunny: 0
   debug: 1
   isMoving: 0
@@ -548,7 +562,7 @@ PrefabInstance:
     - target: {fileID: 114503987504557948, guid: 9242026cf4543b1458ec0cddd8b0e6a1,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 137000012662373880, guid: 9242026cf4543b1458ec0cddd8b0e6a1,
         type: 3}
@@ -829,6 +843,8 @@ MonoBehaviour:
   autoSpeed: 1
   ToTrot: 6
   ToRun: 8
+  _isChase: 0
+  bunnyGO: {fileID: 0}
   _isBunny: 1
   debug: 0
   isMoving: 0
@@ -1257,9 +1273,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fox Corgi
       objectReference: {fileID: 0}
+    - target: {fileID: 1024728060881870, guid: 2ef9ed67a1a277d4ea8134aebc6bfcef, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4328267971863808, guid: 2ef9ed67a1a277d4ea8134aebc6bfcef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.311
+      value: 8.69
       objectReference: {fileID: 0}
     - target: {fileID: 4328267971863808, guid: 2ef9ed67a1a277d4ea8134aebc6bfcef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1267,7 +1287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4328267971863808, guid: 2ef9ed67a1a277d4ea8134aebc6bfcef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.97
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 4328267971863808, guid: 2ef9ed67a1a277d4ea8134aebc6bfcef, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1312,6 +1332,11 @@ PrefabInstance:
     - target: {fileID: 4328267971863808, guid: 2ef9ed67a1a277d4ea8134aebc6bfcef, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.52248335
+      objectReference: {fileID: 0}
+    - target: {fileID: 114993848496921386, guid: 2ef9ed67a1a277d4ea8134aebc6bfcef,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 137983094649302666, guid: 2ef9ed67a1a277d4ea8134aebc6bfcef,
         type: 3}
