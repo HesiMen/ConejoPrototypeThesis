@@ -8,7 +8,9 @@ public class LazerPointer : MonoBehaviour
     [SerializeField] LineRenderer lazer;
 
     [SerializeField] Transform initialPos;
-   
+
+
+    [SerializeField] GameObject spherePos;
 
     [SerializeField] AIGeneraMovement bunny;
     public InputDeviceCharacteristics controllerCharacteristics;
@@ -55,7 +57,9 @@ public class LazerPointer : MonoBehaviour
                     Debug.DrawRay(initialPos.position, initialPos.TransformDirection(Vector3.forward) * hit1.distance, Color.yellow);
                     lazer.SetPosition(1, hit1.point);
                     Debug.Log(hit1.collider.name);
-                    bunny.AssignMovementTask(hit1.point);
+                    spherePos.transform.position = hit1.point;
+
+                    bunny.AssignMovementTask(spherePos.transform.position);
                     /* NavMeshHit navMeshHit;
 
                      if (NavMesh.SamplePosition(hit1.point, out navMeshHit, .5f, 1))

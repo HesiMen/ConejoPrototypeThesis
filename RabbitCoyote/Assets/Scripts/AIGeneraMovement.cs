@@ -1,4 +1,5 @@
 ﻿using MalbersAnimations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,9 @@ public class AIGeneraMovement : MonoBehaviour
     public float ToTrot = 6f;
     public float ToRun = 8f;
 
+
+    public bool _isChase = false;
+    [SerializeField] GameObject bunnyGO;
     [SerializeField] private bool _isBunny;
 
 
@@ -63,15 +67,31 @@ public class AIGeneraMovement : MonoBehaviour
     private void Update()
     {
 
-
-
+      
         if (!_isBunny)
         {
+            float dis = Vector3.Distance(transform.position, bunnyGO.transform.position);
+//Debug.Log(dis);
+            if (dis < 1f)
+            {
+                _isChase = true;
+                seconds = 0f;
+                agent.speed = .7f;
 
-            if (HasReachedPos())
+            }
+
+
+                if (HasReachedPos())
             {
                 animal.Action = true;
                 StartCoroutine(StartChasing());
+            }
+
+            else
+            {
+
+
+
             }
         }
         else
@@ -83,16 +103,26 @@ public class AIGeneraMovement : MonoBehaviour
     }
     public Vector3 RandomNavmeshLocation(float radius)
     {
-        Vector3 randomDirection = Random.insideUnitSphere * radius;
-        randomDirection += transform.position;
-        NavMeshHit hit;
-        Vector3 finalPosition = Vector3.zero;
-        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
+        if (!_isChase)
         {
-            finalPosition = hit.position;
+            Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * radius;
+            randomDirection += transform.position;
+
+            NavMeshHit hit;
+            Vector3 finalPosition = Vector3.zero;
+            if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
+            {
+                finalPosition = hit.position;
+            }
+
+            return finalPosition;
+
         }
 
-        return finalPosition;
+
+        return bunnyGO.transform.position;
+
+
     }
 
 
@@ -158,5 +188,7 @@ public class AIGeneraMovement : MonoBehaviour
         }
     }
 
+
+   
 
 }
