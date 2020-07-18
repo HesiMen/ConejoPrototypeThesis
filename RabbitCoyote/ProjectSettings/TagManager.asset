@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Water
+  - Coyote
+  - Collectible
+  - Bunny
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - 
   - 
   - Water
-  - 
+  - Floor
   - 
   - 
   - 

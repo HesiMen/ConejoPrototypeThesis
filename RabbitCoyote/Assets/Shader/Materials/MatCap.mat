@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glow
-  m_Shader: {fileID: -6465566751694194690, guid: 0472e5922469e4395879bea109c2f8f3,
+  m_Name: MatCap
+  m_Shader: {fileID: -6465566751694194690, guid: 36e304e0a67424f53bfed72e5c7fabf4,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,8 +19,15 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: 8d64f5ac06f88864e979599de9bc2e2b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MatCapTexture:
+        m_Texture: {fileID: 2800000, guid: 55c70dc6fcb5e4ad98aea8dbde0e8dbf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _FresnelStrength: 0.35
-    - _NormalStrength: 0
+    - _Brightness: 2
     m_Colors: []
