@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Water
   - Coyote
+  - Collectible
+  - Bunny
   layers:
   - Default
   - TransparentFX

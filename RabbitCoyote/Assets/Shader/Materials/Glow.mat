@@ -21,6 +21,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _FresnelStrength: 2.3
+    - _FresnelStrength: 0.35
     - _NormalStrength: 0
     m_Colors: []
