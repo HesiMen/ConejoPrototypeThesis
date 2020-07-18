@@ -812,7 +812,7 @@ MonoBehaviour:
   - {fileID: 933777694}
   lerpActuator: 0
   energyIndex: 0
-  fadeRate: 2
+  fadeRate: 0.75
 --- !u!1 &2072454538
 GameObject:
   m_ObjectHideFlags: 0

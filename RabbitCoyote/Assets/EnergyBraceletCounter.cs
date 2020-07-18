@@ -28,7 +28,7 @@ public class EnergyBraceletCounter : MonoBehaviour
         lerpActuator = this.gameObject.GetComponentInChildren<ShaderFillDataManger>().fill;
     }
 
-    public bool addEnergy()
+    /*public bool addEnergy()
     {
         if (lightBursts < energyBlocks.Length)
         {
@@ -60,18 +60,18 @@ public class EnergyBraceletCounter : MonoBehaviour
             {
                 //energyBlocks[i].GetComponent<Renderer>().material.color = Color.white;
                 //energyBlocks[i].SetActive(true);
-                energyBlocks[i].GetComponent<Renderer>().material.SetFloat("_FresnelPower", Mathf.Lerp(0f, 4f, lerpActuator));
+                energyBlocks[i].GetComponent<Renderer>().material.SetFloat("_FillHeight", Mathf.Lerp(0f, 1f, lerpActuator));
             }
             else
             {
                 //energyBlocks[i].GetComponent<Renderer>().material.color = Color.grey;
                 //m_Material.color = Color.gray;
                 //energyBlocks[i].SetActive(false);
-                energyBlocks[i].GetComponent<Renderer>().material.SetFloat("_FresnelPower", Mathf.Lerp(4f, 0f, lerpActuator));
+                energyBlocks[i].GetComponent<Renderer>().material.SetFloat("_FillHeight", Mathf.Lerp(1f, 0f, lerpActuator));
 
             }
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -103,7 +103,7 @@ public class EnergyBraceletCounter : MonoBehaviour
     public void LerpObjectEmission()
     {
         energyBlocks[energyIndex].GetComponent<ShaderFillDataManger>().fill = lerpActuator;
-        energyBlocks[energyIndex].GetComponent<Renderer>().material.SetFloat("_FresnelPower", Mathf.Lerp(4f, 0f, lerpActuator));
+        energyBlocks[energyIndex].GetComponent<Renderer>().material.SetFloat("_FillHeight", Mathf.Lerp(0f, 1f, lerpActuator));
 
         // Lower When Removing Energy
         if (removeEnergy)
