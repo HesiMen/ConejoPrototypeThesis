@@ -24,11 +24,11 @@ Material:
     - Vector1_16B22CA9: 0
     - Vector1_62CBF02E: 4
     - _FillHeight: 0
-    - _FillStrength: 0
-    - _FoamHeight: 0.01
-    - _FresnelPower: 4
-    - _WaveHeight: 0.02
-    - _WaveSpeed: 2
+    - _FillStrength: 0.06
+    - _FoamHeight: 0.2
+    - _FresnelPower: 9.18
+    - _WaveHeight: 0.07
+    - _WaveSpeed: 3.05
     m_Colors:
     - Color_A9E5A7CB: {r: 1, g: 0.9607843, b: 0, a: 0}
     - _Emission: {r: 1, g: 1, b: 0, a: 0}
