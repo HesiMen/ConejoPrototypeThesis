@@ -17,7 +17,7 @@ public class EnergyBraceletCounter : MonoBehaviour
     public int energyIndex;
 
     public float fadeRate;
-    private bool plusEnergy, removeEnergy;
+    public bool plusEnergy, removeEnergy;
 
 
     // Start is called before the first frame update
@@ -129,6 +129,10 @@ public class EnergyBraceletCounter : MonoBehaviour
                 if (energyIndex < energyBlocks.Length - 1) energyIndex++;
 
                 lerpActuator = energyBlocks[energyIndex].GetComponent<ShaderFillDataManger>().fill;
+                
+                if(energyIndex >= 4 && lerpActuator >= .5f )
+                    Application.Quit();
+
                 plusEnergy = false;
             }
         }
