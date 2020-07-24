@@ -7,6 +7,9 @@ public class RotateObject : MonoBehaviour
     Vector3 mPrevPos = Vector3.zero;
     Vector3 mPosDelta = Vector3.zero;
 
+    public float timeFactor = 0f;
+    public float fixedTimeFactor = 0f;
+
 
 
 

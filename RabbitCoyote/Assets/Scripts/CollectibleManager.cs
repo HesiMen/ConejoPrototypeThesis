@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollectibleManager : MonoBehaviour
 {
+    public GameObject collectibleUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class CollectibleManager : MonoBehaviour
         if(other.CompareTag("Collectible"))
         {
             other.gameObject.GetComponent<LerpToPlayer>().lerpState = true;
+            collectibleUI.GetComponent<EnergyBraceletCounter>().plusEnergy = true;
         }
     }
 }
