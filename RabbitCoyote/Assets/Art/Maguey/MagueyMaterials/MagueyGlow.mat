@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MatCap 1
-  m_Shader: {fileID: -6465566751694194690, guid: 36e304e0a67424f53bfed72e5c7fabf4,
+  m_Name: MagueyGlow
+  m_Shader: {fileID: -6465566751694194690, guid: 9a1a331bc748e475eb6f88e18e1e46e9,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,16 +19,16 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: b61ed486cb8bb4d689677ef8ff6cc2d4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MatCapTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Floats:
-    - _Brightness: 1.9
+    - Vector1_16B22CA9: 0
+    - Vector1_62CBF02E: 4
+    - _FillHeight: 1
+    - _FillStrength: 0
+    - _FoamHeight: -0.68
+    - _FresnelPower: 2.01
+    - _WaveHeight: 0.4
+    - _WaveSpeed: 1
     m_Colors:
-    - _DiffuseColor: {r: 1, g: 1, b: 1, a: 0}
+    - Color_A9E5A7CB: {r: 1, g: 0.9607843, b: 0, a: 0}
+    - _Emission: {r: 0, g: 0.31132078, b: 0.13569388, a: 0}
