@@ -16,13 +16,12 @@ public class SwapMaterials : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MaterialSwap();
+        if (Input.GetKeyDown(KeyCode.Space))
+            MaterialSwap();
     }
 
     public void MaterialSwap()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
             if (materialSwapIndex >= materials.Count - 1)
             {
                 materialSwapIndex = 0;
@@ -31,11 +30,10 @@ public class SwapMaterials : MonoBehaviour
             {
                 materialSwapIndex++;
             }
-            
+
             foreach(Renderer rend in childrenRend)
             {
                 rend.material = materials[materialSwapIndex];
             }
-        }
     }
 }
