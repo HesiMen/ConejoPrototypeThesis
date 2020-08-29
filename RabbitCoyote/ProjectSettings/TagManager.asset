@@ -8,6 +8,7 @@ TagManager:
   - Coyote
   - Collectible
   - Bunny
+  - Maguey
   layers:
   - Default
   - TransparentFX
