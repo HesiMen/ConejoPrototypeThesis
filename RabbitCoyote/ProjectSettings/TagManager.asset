@@ -8,6 +8,7 @@ TagManager:
   - Coyote
   - Collectible
   - Bunny
+  - Maguey
   layers:
   - Default
   - TransparentFX
@@ -18,10 +19,10 @@ TagManager:
   - 
   - 
   - Water
-  - Floor
+  - Ground
   - Collectible
   - Plant
-  - 
+  - Body
   - 
   - 
   - 

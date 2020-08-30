@@ -5603,7 +5603,7 @@ GameObject:
   - component: {fileID: 3132779815088134138}
   - component: {fileID: 3132779815088134139}
   - component: {fileID: 3132779815088134136}
-  - component: {fileID: 3132779815088134137}
+  - component: {fileID: 7947922730372790561}
   - component: {fileID: 3132779815088134086}
   - component: {fileID: 3132779815088134087}
   m_Layer: 10
@@ -5689,7 +5689,7 @@ MonoBehaviour:
   rightTeleportRay: {fileID: 3132779814647397379}
   teleportActivationButton: 2
   activationThreshold: 0.2
---- !u!114 &3132779815088134137
+--- !u!114 &7947922730372790561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5707,7 +5707,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
-  inputSource: 4
+  inputSource: 0
 --- !u!143 &3132779815088134086
 CharacterController:
   m_ObjectHideFlags: 0
