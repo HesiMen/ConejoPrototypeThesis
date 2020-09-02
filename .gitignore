@@ -64,3 +64,7 @@ crashlytics-build.properties
 /RabbitCoyote/Assets/StreamingAssets/**/*.bank.meta
 /RabbitCoyote/fmod_editor.log
 
+RabbitCoyote/Assets/Resources/DOTweenSettings.asset
+RabbitCoyote/Packages/packages-lock.json
+RabbitCoyote/ProjectSettings/URPProjectSettings.asset
+RabbitCoyote/ProjectSettings/QualitySettings.asset
