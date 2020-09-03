@@ -5,6 +5,27 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
+public enum SurfaceType
+{
+    Opaque,
+    Transparent
+}
+
+public enum BlendMode
+{
+    Alpha,   // Old school alpha-blending mode, fresnel does not affect amount of transparency
+    Premultiply, // Physically plausible transparency mode, implemented as alpha pre-multiply
+    Additive,
+    Multiply
+}
+
+public enum RenderFace
+{
+    Front = 2,
+    Back = 1,
+    Both = 0
+}
+
 public class StylizedSurfaceEditor : UnityEditor.ShaderGUI {
     private Material _target;
     private MaterialEditor _editor;
@@ -28,6 +49,10 @@ public class StylizedSurfaceEditor : UnityEditor.ShaderGUI {
         return FindProperty(name, _properties);
     }
 
+    bool HasProperty(string name) {
+        return _target != null && _target.HasProperty(name);
+    }
+
     static GUIContent MakeLabel(string text, string tooltip = null) {
         staticLabel.text = text;
         staticLabel.tooltip = tooltip;
@@ -47,7 +72,7 @@ public class StylizedSurfaceEditor : UnityEditor.ShaderGUI {
         foreach (MaterialProperty property in properties) {
             bool skipProperty = false;
             string displayName = property.displayName;
-            
+
             if (displayName.Contains("[_CELPRIMARYMODE_SINGLE]")) {
                 skipProperty = !_target.IsKeywordEnabled("_CELPRIMARYMODE_SINGLE");
                 EditorGUI.indentLevel += 1;
@@ -91,6 +116,18 @@ public class StylizedSurfaceEditor : UnityEditor.ShaderGUI {
             if (displayName.Contains("[_UNITYSHADOWMODE_COLOR]")) {
                 skipProperty = !_target.IsKeywordEnabled("_UNITYSHADOWMODE_COLOR");
                 EditorGUI.indentLevel += 1;
+            }
+
+            if (displayName.Contains("[DR_ENABLE_LIGHTMAP_DIR]")) {
+                var dirPitch = _target.GetFloat("_LightmapDirectionPitch");
+                var dirYaw = _target.GetFloat("_LightmapDirectionYaw");
+
+                var dirPitchRad = dirPitch * Mathf.Deg2Rad;
+                var dirYawRad = dirYaw * Mathf.Deg2Rad;
+                
+                var direction = new Vector4(Mathf.Sin(dirPitchRad) * Mathf.Sin(dirYawRad), Mathf.Cos(dirPitchRad), 
+                                            Mathf.Sin(dirPitchRad) * Mathf.Cos(dirYawRad), 0.0f);
+                _target.SetVector("_LightmapDirection", direction);
             }
 
             if (displayName.Contains("FOLDOUT")) {
@@ -157,8 +194,146 @@ public class StylizedSurfaceEditor : UnityEditor.ShaderGUI {
             EditorGUI.indentLevel = originalIntentLevel;
         }
 
+        if (UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset != null) {
+            HandleUrpSettings(_target, _editor);
+        }
+
         EditorGUILayout.Separator();
         _editor.EnableInstancingField();
+    }
+
+    // Adapted from BaseShaderGUI.cs.
+    private void HandleUrpSettings(Material material, MaterialEditor materialEditor) {
+        bool alphaClip = false;
+        if (material.HasProperty("_AlphaClip")) {
+            alphaClip = material.GetFloat("_AlphaClip") >= 0.5;
+        }
+
+        if (alphaClip)
+        {
+            material.EnableKeyword("_ALPHATEST_ON");
+        }
+        else
+        {
+            material.DisableKeyword("_ALPHATEST_ON");
+        }
+
+        if (HasProperty("_Surface")) {
+            EditorGUI.BeginChangeCheck();
+            var surfaceProp = FindProperty("_Surface");
+            EditorGUI.showMixedValue = surfaceProp.hasMixedValue;
+            var surfaceType = (SurfaceType)surfaceProp.floatValue;
+            surfaceType = (SurfaceType)EditorGUILayout.EnumPopup("Surface Type", surfaceType);
+            if (EditorGUI.EndChangeCheck())
+            {
+                materialEditor.RegisterPropertyChangeUndo("Surface Type");
+                surfaceProp.floatValue = (float)surfaceType;
+            }
+
+            if (surfaceType == SurfaceType.Opaque)
+            {
+                if (alphaClip)
+                {
+                    material.renderQueue = (int) UnityEngine.Rendering.RenderQueue.AlphaTest;
+                    material.SetOverrideTag("RenderType", "TransparentCutout");
+                }
+                else
+                {
+                    material.renderQueue = (int) UnityEngine.Rendering.RenderQueue.Geometry;
+                    material.SetOverrideTag("RenderType", "Opaque");
+                }
+
+                material.renderQueue += material.HasProperty("_QueueOffset") ? (int) material.GetFloat("_QueueOffset") : 0;
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+                material.SetInt("_ZWrite", 1);
+                material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.SetShaderPassEnabled("ShadowCaster", true);
+            }
+            else  // Transparent
+            {
+                BlendMode blendMode = (BlendMode) material.GetFloat("_Blend");
+
+                // Specific Transparent Mode Settings
+                switch (blendMode)
+                {
+                    case BlendMode.Alpha:
+                        material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.SrcAlpha);
+                        material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                        break;
+                    case BlendMode.Premultiply:
+                        material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.One);
+                        material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                        material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+                        break;
+                    case BlendMode.Additive:
+                        material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.SrcAlpha);
+                        material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.One);
+                        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                        break;
+                    case BlendMode.Multiply:
+                        material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.DstColor);
+                        material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.Zero);
+                        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                        material.EnableKeyword("_ALPHAMODULATE_ON");
+                        break;
+                }
+
+                // General Transparent Material Settings
+                material.SetOverrideTag("RenderType", "Transparent");
+                material.SetInt("_ZWrite", 0);
+                material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+                material.renderQueue += material.HasProperty("_QueueOffset") ? (int) material.GetFloat("_QueueOffset") : 0;
+                material.SetShaderPassEnabled("ShadowCaster", false);
+            }
+
+            // DR: draw popup.
+            if (surfaceType == SurfaceType.Transparent && HasProperty("_Blend")) {
+                EditorGUI.BeginChangeCheck();
+                var blendModeProp = FindProperty("_Blend");
+                EditorGUI.showMixedValue = blendModeProp.hasMixedValue;
+                var blendMode = (BlendMode)blendModeProp.floatValue;
+                blendMode = (BlendMode)EditorGUILayout.EnumPopup("Blend Mode", blendMode);
+                if (EditorGUI.EndChangeCheck())
+                {
+                    materialEditor.RegisterPropertyChangeUndo("Blend Mode");
+                    blendModeProp.floatValue = (float)blendMode;
+                }
+            }
+        }
+
+        // DR: draw popup.
+        if (HasProperty("_Cull")) {
+            EditorGUILayout.Separator();
+            EditorGUI.BeginChangeCheck();
+            var cullingProp = FindProperty("_Cull");
+            EditorGUI.showMixedValue = cullingProp.hasMixedValue;
+            var culling = (RenderFace)cullingProp.floatValue;
+            culling = (RenderFace)EditorGUILayout.EnumPopup("Render Faces", culling);
+            if (EditorGUI.EndChangeCheck())
+            {
+                materialEditor.RegisterPropertyChangeUndo("Render Faces");
+                cullingProp.floatValue = (float)culling;
+                material.doubleSidedGI = (RenderFace)cullingProp.floatValue != RenderFace.Front;
+            }
+        }
+
+        if (HasProperty("_AlphaClip")) {
+            EditorGUI.BeginChangeCheck();
+            var alphaClipProp = FindProperty("_AlphaClip");
+            EditorGUI.showMixedValue = alphaClipProp.hasMixedValue;
+            var alphaClipEnabled = EditorGUILayout.Toggle("Alpha Clipping", alphaClipProp.floatValue == 1);
+            if (EditorGUI.EndChangeCheck())
+                alphaClipProp.floatValue = alphaClipEnabled ? 1 : 0;
+            EditorGUI.showMixedValue = false;
+
+            if (alphaClipProp.floatValue == 1)
+            {
+                var alphaCutoffProp = FindProperty("_Cutoff");
+                materialEditor.ShaderProperty(alphaCutoffProp, "Threshold", 1);
+            }
+        }
     }
 
     private void PromptTextureSave(MaterialEditor materialEditor, Func<Texture2D> generate, string propertyName,
@@ -234,7 +409,8 @@ public class StylizedSurfaceEditor : UnityEditor.ShaderGUI {
         //22b5f7ed-989d-49d1-90d9-c62d76c3081a
         
         Debug.Assert(importer,
-            string.Format("Could not change import settings of {0} [{1}]", fullPath, pathRelativeToAssets));
+            string.Format("[FlatKit] Could not change import settings of {0} [{1}]",
+                    fullPath, pathRelativeToAssets));
     }
 
     private static Texture2D LoadTexture(string fullPath) {
