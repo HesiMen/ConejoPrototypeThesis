@@ -566,6 +566,116 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1630197486}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &307818515 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3132779815206806961, guid: aa99262ede8135948af2751e85fafb90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630197486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &370473329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 370473330}
+  - component: {fileID: 370473331}
+  m_Layer: 12
+  m_Name: BingEffector (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &370473330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370473329}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 307818515}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &370473331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370473329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574bea172f914264aa51ad3bc4c8e6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 0.6
+  FullEffectRadiusRatio: 0.22
+  MaxImpulseSpeed: 5
+  ContinuousMotion: 0
+  MoveDistance: 0.5
+  LinearImpulse: 4
+  RotationAngle: 20
+  AngularImpulse: 60
+  DrawAffectedReactorFieldGizmos: 0
+--- !u!1 &445981340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 445981341}
+  - component: {fileID: 445981342}
+  m_Layer: 12
+  m_Name: BingEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &445981341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445981340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 276671788}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &445981342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445981340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574bea172f914264aa51ad3bc4c8e6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 0.6
+  FullEffectRadiusRatio: 0.22
+  MaxImpulseSpeed: 5
+  ContinuousMotion: 0
+  MoveDistance: 0.5
+  LinearImpulse: 4
+  RotationAngle: 20
+  AngularImpulse: 60
+  DrawAffectedReactorFieldGizmos: 0
 --- !u!1 &519473011 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3132779814647397388, guid: aa99262ede8135948af2751e85fafb90,
@@ -866,6 +976,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743739233}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &796496437 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3132779815088134140, guid: aa99262ede8135948af2751e85fafb90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630197486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &800029237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,6 +1460,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 157.688, y: 159.499, z: 93.328995}
+--- !u!1 &1193404883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193404884}
+  - component: {fileID: 1193404885}
+  m_Layer: 12
+  m_Name: BingEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1193404884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193404883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 796496437}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1193404885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193404883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574bea172f914264aa51ad3bc4c8e6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 0.6
+  FullEffectRadiusRatio: 0.6
+  MaxImpulseSpeed: 2
+  ContinuousMotion: 0
+  MoveDistance: 0.5
+  LinearImpulse: 4
+  RotationAngle: 20
+  AngularImpulse: 30
+  DrawAffectedReactorFieldGizmos: 1
 --- !u!1 &1348721373
 GameObject:
   m_ObjectHideFlags: 0
