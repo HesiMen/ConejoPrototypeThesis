@@ -6,13 +6,17 @@ using DG.Tweening;
 public class EmergeScript : MonoBehaviour
 {
     public bool _emergeOnDistance;
+    public bool _emergeOnEvent;
+    public bool _emergeNow = false;
     public float emergeTime = .5f;
     public Vector2 shakeAmmount;
     public int vibrato = 40;
     public int randomness = 20;
     [SerializeField] Transform rock;
+    [ConditionalHide("_emergeOnDistance", true)]
     [SerializeField] Transform player;
     [SerializeField] ParticleSystem dirt;
+    [ConditionalHide("_emergeOnDistance", true)]
     public float maxDistance = 4;
     public float maxHeight = 1.5f;
 
@@ -31,7 +35,7 @@ public class EmergeScript : MonoBehaviour
     private void Update()
     {
 
-        if (_emergeOnDistance)
+        if (_emergeOnDistance && !_emergeOnEvent)
         {
             float distanceCheck = Vector3.Distance(rock.position, player.position);
 
@@ -74,6 +78,20 @@ public class EmergeScript : MonoBehaviour
 
 
         }
+
+        if(_emergeOnEvent && !_emergeOnDistance && _emergeNow)
+        {
+            Emerge(maxHeight);
+            Debug.Log("max");
+            max = true;
+            dirt.Play();
+            _emergeOnEvent = false;
+        }
+    }
+
+    public void EmergeNowEventActive()
+    {
+        _emergeNow = true;
     }
 
     private void Emerge(float ammountY)
