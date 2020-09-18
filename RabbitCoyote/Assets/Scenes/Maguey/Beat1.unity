@@ -9934,6 +9934,21 @@ MonoBehaviour:
   PlantingSeeds:
     m_PersistentCalls:
       m_Calls: []
+  PlantingReward:
+    m_PersistentCalls:
+      m_Calls: []
+  FiveSticks:
+    m_PersistentCalls:
+      m_Calls: []
+  FireStickAndStickReady:
+    m_PersistentCalls:
+      m_Calls: []
+  StickToMakeFire:
+    m_PersistentCalls:
+      m_Calls: []
+  FireReward:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1431562648
 Transform:
   m_ObjectHideFlags: 0
