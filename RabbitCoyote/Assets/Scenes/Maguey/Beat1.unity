@@ -1525,6 +1525,120 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &378855555
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 904905914}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.099
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.681
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6861905
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0036418736
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0036417544
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7274037
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -86.608
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -10.022
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 10.022
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 27.186
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 27.186
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 27.186
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd06f5124c2e979468966ff662ef9b85, type: 2}
+    - target: {fileID: -7511558181221131132, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_Name
+      value: hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6924da6ff201954ebdb381920199da1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6924da6ff201954ebdb381920199da1, type: 3}
 --- !u!4 &393519427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4203849390966504, guid: d8f0099df63275647a8bcf646df1ca00,
@@ -3324,6 +3438,7 @@ Transform:
   - {fileID: 940563811}
   - {fileID: 1529312017}
   - {fileID: 704509422}
+  - {fileID: 1829323433}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -79.978004, z: 0}
@@ -11620,7 +11735,7 @@ PrefabInstance:
     - target: {fileID: 2879651877424574138, guid: e8ff679a9f8b44b3ea9d072d9f15cd8b,
         type: 3}
       propertyPath: speed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2879651877424574138, guid: e8ff679a9f8b44b3ea9d072d9f15cd8b,
         type: 3}
@@ -13161,6 +13276,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1829323433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b6924da6ff201954ebdb381920199da1,
+    type: 3}
+  m_PrefabInstance: {fileID: 378855555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1878085031
 GameObject:
   m_ObjectHideFlags: 0
@@ -14558,7 +14679,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5592965918338907688}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -14770,7 +14891,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6377027477556669770}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
