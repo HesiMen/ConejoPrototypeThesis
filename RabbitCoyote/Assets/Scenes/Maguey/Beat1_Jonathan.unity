@@ -3498,7 +3498,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1113911
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -11112,7 +11112,7 @@ GameObject:
   - component: {fileID: 1477098769}
   - component: {fileID: 1477098770}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: FireLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11145,12 +11145,12 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8517299, b: 0.3820755, a: 1}
   m_Intensity: 4.49
-  m_Range: 5.09
+  m_Range: 3.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -13623,6 +13623,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 378855555}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1872126585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665682206305718269, guid: 001a5168844eb4898aad42e5fb05e54c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2086459561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1872126586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872126585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fdcd5160f9c4dbdb750b9df7169b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireLight: {fileID: 1477098770}
+  minIntensity: 2
+  maxIntensity: 5
+  flickerRate: 5
 --- !u!1 &1878085031
 GameObject:
   m_ObjectHideFlags: 0
@@ -14792,6 +14814,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.29
       objectReference: {fileID: 0}
+    - target: {fileID: 4665682205883053289, guid: 001a5168844eb4898aad42e5fb05e54c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665682205909780025, guid: 001a5168844eb4898aad42e5fb05e54c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4665682206305718269, guid: 001a5168844eb4898aad42e5fb05e54c,
         type: 3}
       propertyPath: m_Name
@@ -14867,15 +14899,45 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4665682206900574948, guid: 001a5168844eb4898aad42e5fb05e54c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665682207047615757, guid: 001a5168844eb4898aad42e5fb05e54c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4665682207237556492, guid: 001a5168844eb4898aad42e5fb05e54c,
         type: 3}
       propertyPath: m_RenderAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4665682207237556493, guid: 001a5168844eb4898aad42e5fb05e54c,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665682207237556494, guid: 001a5168844eb4898aad42e5fb05e54c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 4665682207237556499, guid: 001a5168844eb4898aad42e5fb05e54c,
         type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665682207261709832, guid: 001a5168844eb4898aad42e5fb05e54c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665682207598267844, guid: 001a5168844eb4898aad42e5fb05e54c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001a5168844eb4898aad42e5fb05e54c, type: 3}
