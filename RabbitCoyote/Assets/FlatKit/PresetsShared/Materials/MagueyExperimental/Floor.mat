@@ -77,13 +77,13 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FlatRimAmount: 0.5
-    - _FlatRimEdgeSmoothness: 0.844
+    - _FlatRimEdgeSmoothness: 0.429
     - _FlatRimEnabled: 1
     - _FlatRimLightAlign: 0.075
     - _FlatRimSize: 0.025
     - _FlatShadowsEnabled: 1
     - _FlatSmoothness: 0.362
-    - _FlatSpecularEdgeSmoothness: 0
+    - _FlatSpecularEdgeSmoothness: 0.649
     - _FlatSpecularEnabled: 1
     - _FlatSpecularSize: 0
     - _FlatSpecularSmoothness: 0.5
@@ -143,12 +143,12 @@ Material:
     - _ColorDimCurve: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
     - _ColorDimExtra: {r: 0.509434, g: 0.08701028, b: 0, a: 1}
     - _ColorDimSteps: {r: 0, g: 0, b: 0, a: 0.85}
-    - _ColorGradient: {r: 0.65, g: 0.65, b: 0.65, a: 1}
+    - _ColorGradient: {r: 1, g: 1, b: 1, a: 1}
     - _ColorSecondary: {r: 1, g: 0.55879205, b: 0, a: 1}
     - _ColorShadow: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _ColorShadows: {r: 0.37835297, g: 0.4602353, b: 0.72, a: 1}
     - _EmissionColor: {r: 4.9245777, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 0.0754717, g: 0.023301758, b: 0, a: 0.1764706}
-    - _FlatSpecularColor: {r: 0.8301887, g: 0.7704247, b: 0.3250267, a: 1}
+    - _FlatSpecularColor: {r: 0.83137256, g: 0.76862746, b: 0.3254902, a: 1}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _UnityShadowColor: {r: 0.65, g: 0.65, b: 0.65, a: 1}
