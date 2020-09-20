@@ -89,9 +89,9 @@ MonoBehaviour:
   m_Name: AN_URP_Volume
   m_EditorClassIdentifier: 
   components:
+  - {fileID: 1749530876505947380}
   - {fileID: -1326341184559848280}
   - {fileID: 5311195265086999255}
-  - {fileID: 1749530876505947380}
   - {fileID: -4482468529117214375}
   - {fileID: -7372038084260691564}
   - {fileID: 8616347606428310968}
@@ -158,10 +158,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.45
+    m_Value: -1.43
   contrast:
     m_OverrideState: 1
-    m_Value: 100
+    m_Value: -0
     min: -100
     max: 100
   colorFilter:
