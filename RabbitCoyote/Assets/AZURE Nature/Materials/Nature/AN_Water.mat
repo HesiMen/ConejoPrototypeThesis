@@ -67,10 +67,10 @@ Material:
     - _FoamDistance: 0.35
     - _FoamOpacity: 1
     - _Normal: 0.15
-    - _Opacity: 1
+    - _Opacity: 0.701
     - _Power: 0.2
     - _RefractionIntensity: 0.15
-    - _RefractionScale: 0.2
+    - _RefractionScale: 0.513
     - _Scale: 50
     - _Smoothness: 0.88
     - _TessEdgeLength: 16

@@ -14867,6 +14867,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4665682207237556492, guid: 001a5168844eb4898aad42e5fb05e54c,
+        type: 3}
+      propertyPath: m_RenderAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4665682207237556499, guid: 001a5168844eb4898aad42e5fb05e54c,
         type: 3}
       propertyPath: m_Layer
