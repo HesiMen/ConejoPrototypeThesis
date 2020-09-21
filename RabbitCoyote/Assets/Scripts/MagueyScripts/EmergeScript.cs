@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
+using UnityEngine.Events;
 
+[Serializable]
+public class EmergeEvent : UnityEvent { }
 public class EmergeScript : MonoBehaviour
 {
+
+    
+
     public bool _emergeOnDistance;
     public bool _emergeOnEvent;
     public bool _emergeNow = false;
@@ -27,6 +34,11 @@ public class EmergeScript : MonoBehaviour
     bool mid = false;
 
     bool max = false;
+
+
+    public EmergeEvent StartEmerge;
+    public EmergeEvent EndEmerge;
+
     private void Start()
     {
         directionShake = new Vector3(shakeAmmount.x, 0, shakeAmmount.y);
@@ -34,7 +46,7 @@ public class EmergeScript : MonoBehaviour
     }
     private void Update()
     {
-
+        
         if (_emergeOnDistance && !_emergeOnEvent)
         {
             float distanceCheck = Vector3.Distance(rock.position, player.position);
@@ -70,6 +82,7 @@ public class EmergeScript : MonoBehaviour
                     {
                         Emerge(maxHeight);
                         Debug.Log("max");
+                        EndEmerge.Invoke();
                         max = true;
                         dirt.Play();
                     }
