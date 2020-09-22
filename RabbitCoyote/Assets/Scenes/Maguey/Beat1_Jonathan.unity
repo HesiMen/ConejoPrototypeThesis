@@ -1981,7 +1981,6 @@ MonoBehaviour:
   blendMode: 0
   objectAlpha: 1
   mainColor: {r: 0, g: 0, b: 0, a: 0}
-  renderQueue: 3000
 --- !u!4 &444303768
 Transform:
   m_ObjectHideFlags: 0
