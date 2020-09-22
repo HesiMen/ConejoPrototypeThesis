@@ -37,6 +37,7 @@ public class EmergeScript : MonoBehaviour
 
 
     public EmergeEvent StartEmerge;
+    public EmergeEvent MidEmerge;
     public EmergeEvent EndEmerge;
 
     private void Start()
@@ -59,7 +60,7 @@ public class EmergeScript : MonoBehaviour
                     if (!min)
                     {
                         Emerge(maxHeight / 4f);
-                        Debug.Log("MaxHeigh");
+                        StartEmerge.Invoke();
                         min = true;
                         dirt.Play();
                     }
@@ -70,7 +71,7 @@ public class EmergeScript : MonoBehaviour
                     if (!mid)
                     {
                         Emerge(maxHeight / 2f);
-                        Debug.Log("halfway");
+                        MidEmerge.Invoke();
                         mid = true;
                         dirt.Play();
                     }
@@ -81,7 +82,7 @@ public class EmergeScript : MonoBehaviour
                     if (!max)
                     {
                         Emerge(maxHeight);
-                        Debug.Log("max");
+                        
                         EndEmerge.Invoke();
                         max = true;
                         dirt.Play();
