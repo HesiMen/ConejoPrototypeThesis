@@ -1976,11 +1976,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maguey: {fileID: 1077167494}
-  magueyRend: []
-  alphaToggle: 1
+  alphaToggle: 0
   blendMode: 0
   objectAlpha: 1
   mainColor: {r: 0, g: 0, b: 0, a: 0}
+  lerpAlpha: 0
+  minAlpha: 0
+  maxAlpha: 1
+  lerpRate: -0.2
+  initialLerpState: 1
+  minPreM: -1
+  maxPreM: 1
+  lerpRatePreM: -0.4
+  initialLerpStatePreM: 1
 --- !u!4 &444303768
 Transform:
   m_ObjectHideFlags: 0

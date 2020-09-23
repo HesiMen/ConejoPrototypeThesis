@@ -12,21 +12,39 @@ public enum BlendMode
 
 public class MagueyTransparency : MonoBehaviour
 {
+    [Header("General")]
     public GameObject maguey;
-    public Renderer[] magueyRend;
-    
+    private Renderer[] magueyRend;
     [SerializeField]
     private bool alphaToggle;
 
     public BlendMode blendMode;
-
-
     [SerializeField] [Range(-1,1)]
     private float objectAlpha;
-
     [SerializeField]
     private Color mainColor;
+    [SerializeField]
+    private bool lerpAlpha;
 
+    [Header("Blend Mode: Alpha")]
+    [SerializeField] [Range(-1,1)]
+    private float minAlpha;
+    [SerializeField] [Range(-1,1)]
+    private float maxAlpha;
+    [SerializeField]
+    private float lerpRate;
+    [SerializeField] [Range(-1, 1)]
+    private float initialLerpState;
+
+    [Header("Blend Mode: Premultiply & Additive")]
+    [SerializeField] [Range(-1,1)] private float minPreM;
+    [SerializeField] [Range(-1,1)] private float maxPreM;
+    [SerializeField] private float lerpRatePreM;
+    [SerializeField] private float initialLerpStatePreM;
+    private bool reversing;
+
+    [Range(-1,1)]
+    private int negative;
     
     // Start is called before the first frame update
     void Start()
@@ -34,13 +52,16 @@ public class MagueyTransparency : MonoBehaviour
         magueyRend = maguey.GetComponentsInChildren<Renderer>();
         mainColor = magueyRend[0].material.GetColor("_Color");
 
-        //renderQueue = (int)UnityEngine.Rendering.RenderQueue.Geometry;
+        negative = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         ObjectTransparency();
+
+        if(lerpAlpha)
+            alphaToggle = true;
         //Debug.Log(magueyrend.material.renderQueue);
         //Debug.Log(magueyrend.material.GetColor("_Color"));
     }
@@ -92,6 +113,11 @@ public class MagueyTransparency : MonoBehaviour
                 rend.material.SetShaderPassEnabled("ShadowCaster", false);
 
             }
+            if (lerpAlpha)
+            {
+                alphaToggle = true;
+                LerpAlpha();
+            }
         }
 
         else
@@ -100,9 +126,110 @@ public class MagueyTransparency : MonoBehaviour
             {
                 rend.material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Geometry;
                 rend.material.SetOverrideTag("RenderType", "Opaque");
+                rend.material.SetColor("_Color", mainColor);
+                objectAlpha = 1;
 
                 rend.material.SetInt("_ZWrite",1);
             }
         }
+    }
+
+
+    public void LerpAlpha()
+    {
+        switch(blendMode)
+        {
+            case BlendMode.Alpha:
+                objectAlpha = Mathf.Lerp(minAlpha, maxAlpha, initialLerpState);
+
+                if (initialLerpState < 0f)
+                {
+                    objectAlpha = 0;
+                    initialLerpState = 0;
+                }
+
+                if (initialLerpState > 1f)
+                {
+                    objectAlpha = 1;
+                    initialLerpState = 1;
+                }
+
+                initialLerpState += (negative * lerpRate) * Time.deltaTime;
+            break;
+
+            case BlendMode.Premultiply:
+                objectAlpha = Mathf.Lerp(minPreM, maxPreM, initialLerpStatePreM);
+
+                if (initialLerpStatePreM < 0f)
+                {
+                    objectAlpha = -1;
+                    initialLerpStatePreM = 0;
+                    reversing = true;
+                    negative = -1;
+                }
+
+                if (reversing && (initialLerpStatePreM >= .5f))
+                {
+                    initialLerpStatePreM = .5f;
+                    negative = 1;
+                    blendMode = BlendMode.Additive;
+                    objectAlpha = 1;
+                }
+
+                if (initialLerpStatePreM > 1f)
+                {
+                    objectAlpha = 1;
+                    initialLerpStatePreM = 1;
+                }
+
+                initialLerpStatePreM += (negative * lerpRatePreM) * Time.deltaTime;
+            break;
+
+            case BlendMode.Additive:
+                if (reversing)
+                {
+                    initialLerpStatePreM = 1;
+                    reversing = false;
+                }
+
+                objectAlpha = Mathf.Lerp(minPreM, maxPreM, initialLerpStatePreM);
+
+                if (initialLerpStatePreM < .5f)
+                {
+                    objectAlpha = 0;
+                    initialLerpStatePreM = .5f;
+                }
+
+                if (initialLerpStatePreM >= 1f)
+                {
+                    objectAlpha = 1;
+                    initialLerpStatePreM = 1;
+                }
+
+                initialLerpStatePreM += (negative * lerpRatePreM) * Time.deltaTime;
+
+            break;
+        }
+    }
+
+    public void ResetValues()
+    {
+        objectAlpha = 1;
+        alphaToggle = false;
+        blendMode = BlendMode.Alpha;
+
+        //Blend Mode: Alpha
+        minAlpha = 0;
+        maxAlpha = 1;
+        lerpRate = -0.2f;
+        initialLerpState = 1;
+
+        //Blend Mode: PreMultiply & Additive
+        minPreM = -1;
+        maxPreM = 1;
+        lerpRatePreM = -0.4f;
+        initialLerpStatePreM = 1;
+        negative = 1;
+
     }
 }
