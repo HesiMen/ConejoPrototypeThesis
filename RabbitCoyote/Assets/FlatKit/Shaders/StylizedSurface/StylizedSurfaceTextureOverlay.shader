@@ -1,4 +1,4 @@
-﻿Shader "FlatKit/Stylized Surface Alpha Test"
+﻿Shader "FlatKit/Stylized Surface Texture Overlay"
 {
     Properties
     {
@@ -72,6 +72,8 @@
         [MainTexture] _MainTex("[FOLDOUT(Texture maps){4}]Albedo", 2D) = "white" {}
         [KeywordEnum(Multiply, Add)]_TextureBlendingMode("Blending Mode", Float) = 0
         _TextureImpact("Texture Impact", Range(0, 1)) = 1.0
+
+        _DecalTex("Decal Texture", 2D) = "white" {}
         
         [Space(10)]
         _BumpMap ("Bump Map", 2D) = "bump" {}
