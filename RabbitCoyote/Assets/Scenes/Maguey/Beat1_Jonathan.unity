@@ -1946,6 +1946,63 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ce8a07b98f5697b4192b6489dad4f39d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de56f0fa018b92148833a7d88c6f1a5d, type: 3}
+--- !u!1 &444303766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 444303768}
+  - component: {fileID: 444303767}
+  m_Layer: 0
+  m_Name: ShaderAlphaControlTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &444303767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444303766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52795c431bc649808f1f3273f093ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maguey: {fileID: 1077167494}
+  alphaToggle: 0
+  blendMode: 0
+  objectAlpha: 1
+  mainColor: {r: 0, g: 0, b: 0, a: 0}
+  lerpAlpha: 0
+  minAlpha: 0
+  maxAlpha: 1
+  lerpRate: -0.2
+  initialLerpState: 1
+  minPreM: -1
+  maxPreM: 1
+  lerpRatePreM: -0.4
+  initialLerpStatePreM: 1
+--- !u!4 &444303768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444303766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.724175, y: 0.50969374, z: 0.732218}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &449294301
 GameObject:
   m_ObjectHideFlags: 0
