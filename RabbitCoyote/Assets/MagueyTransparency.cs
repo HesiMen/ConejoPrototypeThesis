@@ -20,11 +20,11 @@ public class MagueyTransparency : MonoBehaviour
 
     public BlendMode blendMode;
     [SerializeField] [Range(-1,1)]
-    private float objectAlpha;
+    public float objectAlpha;
     [SerializeField]
     private Color mainColor;
     [SerializeField]
-    private bool lerpAlpha;
+    public bool lerpAlpha;
 
     [Header("Blend Mode: Alpha")]
     [SerializeField] [Range(-1,1)]
