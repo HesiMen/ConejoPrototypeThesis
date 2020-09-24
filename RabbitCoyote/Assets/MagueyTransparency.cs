@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.Events;
 
+[Serializable]
+public class LerpEvent : UnityEvent { }
 public enum BlendMode
 {
     Alpha,   // Old school alpha-blending mode, fresnel does not affect amount of transparency
@@ -12,6 +16,8 @@ public enum BlendMode
 
 public class MagueyTransparency : MonoBehaviour
 {
+    public LerpEvent FinisedAlphaLerp;
+
     [Header("General")]
     public GameObject maguey;
     private Renderer[] magueyRend;
@@ -46,7 +52,13 @@ public class MagueyTransparency : MonoBehaviour
     [Range(-1,1)]
     private int negative;
     
-    // Start is called before the first frame update
+    
+
+    public void LerpAlphaBOOL()
+    {
+        lerpAlpha = true;
+
+    }
     void Start()
     {
         magueyRend = maguey.GetComponentsInChildren<Renderer>();
@@ -146,6 +158,7 @@ public class MagueyTransparency : MonoBehaviour
                 {
                     objectAlpha = 0;
                     initialLerpState = 0;
+                    FinisedAlphaLerp.Invoke();
                 }
 
                 if (initialLerpState > 1f)

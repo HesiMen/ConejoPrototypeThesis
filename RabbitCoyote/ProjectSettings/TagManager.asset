@@ -8,6 +8,7 @@ TagManager:
   - Coyote
   - Collectible
   - Bunny
+  - Ground
   layers:
   - Default
   - TransparentFX

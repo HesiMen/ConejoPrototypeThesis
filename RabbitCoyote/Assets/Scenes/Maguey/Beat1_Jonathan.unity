@@ -8703,6 +8703,15 @@ MonoBehaviour:
   dirt: {fileID: 1211608776}
   maxDistance: 4
   maxHeight: 1.5
+  StartEmerge:
+    m_PersistentCalls:
+      m_Calls: []
+  MidEmerge:
+    m_PersistentCalls:
+      m_Calls: []
+  EndEmerge:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1077167494
 GameObject:
   m_ObjectHideFlags: 0
@@ -8727,7 +8736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077167494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.13, y: 0, z: -1.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1304609759}
@@ -9383,6 +9392,15 @@ MonoBehaviour:
   dirt: {fileID: 1109615107}
   maxDistance: 4
   maxHeight: 1.5
+  StartEmerge:
+    m_PersistentCalls:
+      m_Calls: []
+  MidEmerge:
+    m_PersistentCalls:
+      m_Calls: []
+  EndEmerge:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1113427238
 GameObject:
   m_ObjectHideFlags: 0
@@ -12608,6 +12626,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5135057782441008299, guid: aa99262ede8135948af2751e85fafb90,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617969264968012611, guid: aa99262ede8135948af2751e85fafb90,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7947922730372790561, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
       propertyPath: inputSource
@@ -13482,6 +13510,15 @@ MonoBehaviour:
   dirt: {fileID: 541737659}
   maxDistance: 4
   maxHeight: 1.5
+  StartEmerge:
+    m_PersistentCalls:
+      m_Calls: []
+  MidEmerge:
+    m_PersistentCalls:
+      m_Calls: []
+  EndEmerge:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1758333756
 PrefabInstance:
   m_ObjectHideFlags: 0
