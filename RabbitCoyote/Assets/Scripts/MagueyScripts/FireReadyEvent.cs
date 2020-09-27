@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireReadyEvent : MonoBehaviour
+public class FireReadyEvent : BeatEvent
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int stickCounter = 0;
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (stickCounter > 5)
+        {
+            if (whichTask == WhichTask.FiveSticks)
+                TaskDone();
+        }
+        else
+        {
+            if (other.GetComponent<AgaveObject>().agaveObject == AgaveObject.AgaveObjectsInteractables.Sticks)
+            {
+                stickCounter += 1;
+            }
+        }
     }
 }
