@@ -9,6 +9,7 @@ TagManager:
   - Collectible
   - Bunny
   - Ground
+  - Component
   layers:
   - Default
   - TransparentFX
