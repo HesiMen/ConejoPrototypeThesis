@@ -13786,6 +13786,7 @@ MonoBehaviour:
   minIntensity: 2
   maxIntensity: 5
   flickerRate: 5
+  rotateAmount: 0
 --- !u!1 &1878085031
 GameObject:
   m_ObjectHideFlags: 0
@@ -15053,7 +15054,7 @@ PrefabInstance:
     - target: {fileID: 4665682207237556492, guid: 001a5168844eb4898aad42e5fb05e54c,
         type: 3}
       propertyPath: m_RenderAlignment
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4665682207237556493, guid: 001a5168844eb4898aad42e5fb05e54c,
         type: 3}
