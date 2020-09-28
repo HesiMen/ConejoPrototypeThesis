@@ -17,15 +17,24 @@ public class FireLightManager : MonoBehaviour
     [SerializeField]
     private int flickerRate;
 
+    [SerializeField]
+    private float rotateAmount;
+
     // Update is called once per frame
     void FixedUpdate()
     {
         RandomIntensity();
+        RotateFlame();
     }
 
     private void RandomIntensity()
     {
         if (Time.frameCount % flickerRate == 0)
             fireLight.intensity = Random.Range(minIntensity, maxIntensity);
+    }
+
+    private void RotateFlame()
+    {
+        this.gameObject.transform.Rotate(new Vector3 (0, rotateAmount, 0), Space.Self);
     }
 }
