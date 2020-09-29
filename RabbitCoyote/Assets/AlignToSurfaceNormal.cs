@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class AlignToSurfaceNormal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField] private Vector3 rayOffset;
+    [SerializeField] private LayerMask maskLayer;
+    //public int layerMask;
+    private int bitMask;
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
-        {
-            Debug.DrawRay(this.transform.position, this.transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
-            Debug.Log("Did Hit");
-        }
+        Ray rayDown = new Ray (this.transform.position + rayOffset, -this.transform.up);
+        RaycastHit hitDown;
 
+        if (Physics.Raycast(rayDown, out hitDown, 10, maskLayer))
+        {
+            Debug.DrawLine(rayDown.origin, hitDown.point, Color.green);
+
+            this.transform.position = hitDown.point;
+            
+            Debug.Log("Did Hit Down: " + hitDown.transform.name);
+        }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 1000, Color.red);
-            Debug.Log("Did not Hit");
+            Debug.DrawLine(rayDown.origin, rayDown.origin + rayDown.direction * 10, Color.red);
+            Debug.Log("Did not Hit Down");
         }
     }
 }
