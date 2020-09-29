@@ -25,10 +25,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _DispNoiseScale: 1.5
+    - _DispNoiseScale: 5.4
     - _DisplacementAmount: 17.73
-    - _DisplacementSpeed: 0.85
+    - _DisplacementSpeed: 0.3
     - _DissolveAmount: 0.06
     - _DistortionAmount: 0.469
+    - _NoiseIntensity: 1
+    - _TestWindAmplitude: 0.79
+    - _TestWindFrequency: 0.76
     m_Colors:
-    - _Color: {r: 5.5908804, g: 2.1368287, b: 0, a: 0}
+    - _Color: {r: 7.9066987, g: 3.0219321, b: 0, a: 0}
+    - _TestWindSpeed: {r: 2.17, g: 0, b: 0, a: 0}
+    - _WindMultiplier: {r: 0, g: 0, b: 0, a: 0}
+    - _WindSpeed: {r: 1, g: 0, b: 0, a: 0}
