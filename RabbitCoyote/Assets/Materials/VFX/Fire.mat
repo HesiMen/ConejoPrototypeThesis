@@ -34,7 +34,7 @@ Material:
     - _TestWindAmplitude: 0.79
     - _TestWindFrequency: 0.76
     m_Colors:
-    - _Color: {r: 5.992157, g: 2.2901962, b: 0, a: 0}
+    - _Color: {r: 7.9066987, g: 3.0219321, b: 0, a: 0}
     - _TestWindSpeed: {r: 2.17, g: 0, b: 0, a: 0}
     - _WindMultiplier: {r: 0, g: 0, b: 0, a: 0}
     - _WindSpeed: {r: 1, g: 0, b: 0, a: 0}

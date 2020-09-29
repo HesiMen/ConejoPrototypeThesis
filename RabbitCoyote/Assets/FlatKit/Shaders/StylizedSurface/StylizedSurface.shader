@@ -69,12 +69,13 @@
         _UnityShadowSharpness("Sharpness", Range(1, 10)) = 1.0
         
         [Space(10)]
-        [MainTexture] _MainTex("[FOLDOUT(Texture maps){4}]Albedo", 2D) = "white" {}
+        [MainTexture] _MainTex("[FOLDOUT(Texture maps){6}]Albedo", 2D) = "white" {}
         [KeywordEnum(Multiply, Add)]_TextureBlendingMode("Blending Mode", Float) = 0
         _TextureImpact("Texture Impact", Range(0, 1)) = 1.0
         
         [Space(10)]
         _BumpMap ("Bump Map", 2D) = "bump" {}
+        _BumpTiling("Bump Tiling", Range(0,10)) = 1.0
 
         // Blending state
         [HideInInspector] _Surface("__surface", Float) = 0.0
