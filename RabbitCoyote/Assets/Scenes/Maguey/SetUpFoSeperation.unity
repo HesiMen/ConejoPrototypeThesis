@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5405,19 +5405,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168723068775743046, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
-      propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2070079472}
-    - target: {fileID: 6168723068775743046, guid: aa99262ede8135948af2751e85fafb90,
-        type: 3}
       propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: set_EnableLeftTeleport
       objectReference: {fileID: 0}
-    - target: {fileID: 6168723068775743046, guid: aa99262ede8135948af2751e85fafb90,
-        type: 3}
-      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2070079472}
     - target: {fileID: 6168723068775743046, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -5425,19 +5415,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168723068775743046, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
-      propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 2014069648}
-    - target: {fileID: 6168723068775743046, guid: aa99262ede8135948af2751e85fafb90,
-        type: 3}
       propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
-    - target: {fileID: 6168723068775743046, guid: aa99262ede8135948af2751e85fafb90,
-        type: 3}
-      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 2014069648}
     - target: {fileID: 6168723068775743046, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -5450,19 +5430,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9219290579026476391, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
-      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1602405727}
-    - target: {fileID: 9219290579026476391, guid: aa99262ede8135948af2751e85fafb90,
-        type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
-    - target: {fileID: 9219290579026476391, guid: aa99262ede8135948af2751e85fafb90,
-        type: 3}
-      propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1602405727}
     - target: {fileID: 9219290579026476391, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
       propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -5470,19 +5440,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9219290579026476391, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
-      propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2070079472}
-    - target: {fileID: 9219290579026476391, guid: aa99262ede8135948af2751e85fafb90,
-        type: 3}
       propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: set_EnableRightTeleport
       objectReference: {fileID: 0}
-    - target: {fileID: 9219290579026476391, guid: aa99262ede8135948af2751e85fafb90,
-        type: 3}
-      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2070079472}
     - target: {fileID: 9219290579026476391, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -5882,18 +5842,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1630197486}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2070079472 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3132779815088134136, guid: aa99262ede8135948af2751e85fafb90,
-    type: 3}
-  m_PrefabInstance: {fileID: 1630197486}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4364e3cb8ccb6747bbdf378124f6569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2080312465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4512458273720744487, guid: 4bf5d6dcf2a7b224b9d80534fb39d814,

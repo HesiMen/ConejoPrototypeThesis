@@ -11210,7 +11210,7 @@ MonoBehaviour:
   m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3132779815088134136}
         m_MethodName: set_EnableRightTeleport
         m_Mode: 6
         m_Arguments:
@@ -11221,7 +11221,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5135057782441008301}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -11235,7 +11235,7 @@ MonoBehaviour:
   m_OnSelectExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3132779815088134136}
         m_MethodName: set_EnableRightTeleport
         m_Mode: 6
         m_Arguments:
@@ -11246,7 +11246,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5135057782441008301}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -11591,7 +11591,7 @@ MonoBehaviour:
   m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3132779815088134136}
         m_MethodName: set_EnableLeftTeleport
         m_Mode: 6
         m_Arguments:
@@ -11602,7 +11602,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5617969264968012613}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -11616,7 +11616,7 @@ MonoBehaviour:
   m_OnSelectExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3132779815088134136}
         m_MethodName: set_EnableLeftTeleport
         m_Mode: 6
         m_Arguments:
@@ -11627,7 +11627,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5617969264968012613}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -11961,6 +11961,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2540770507706147651}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5135057782441008301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7206254768142778350, guid: 2648bd9da3ffc48499a7765fedd86907,
+    type: 3}
+  m_PrefabInstance: {fileID: 2540770507706147651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3023828293995883691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12030,6 +12036,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e71a920ad6e979a45958cfe3674b0d2c, type: 3}
+--- !u!1 &5617969264968012613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7206254768142778350, guid: e71a920ad6e979a45958cfe3674b0d2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3023828293995883691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5617969264968012611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7206254768142778344, guid: e71a920ad6e979a45958cfe3674b0d2c,
