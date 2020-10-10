@@ -25,12 +25,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _CloudSpeed: 0.75
-    - _Density: 0.354
-    - _FluffFactor: 1.12
+    - _CloudSpeed: 1
+    - _Density: 0.396
+    - _FluffFactor: 0.755
     - _NormalMapScale: 3.2
-    - _NormalStrength: 130.05
+    - _NormalStrength: 198.6
     - _VornoiFalloff: 0.4
     - _VoronoiDensity: 8.28
     m_Colors:
-    - _CloudColor: {r: 1, g: 1, b: 1, a: 0}
+    - _CloudColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1499785381371224622}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SeedPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 8631720526514534024}
   - component: {fileID: 8631720526514534025}
   - component: {fileID: 8631720526514534027}
-  m_Layer: 0
+  - component: {fileID: 733336029874397671}
+  m_Layer: 13
   m_Name: Seed_Closed
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 8866287801953677846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.018, y: 0.018, z: 0.018}
+  m_LocalScale: {x: 0.029203199, y: 0.029203199, z: 0.029203199}
   m_Children: []
   m_Father: {fileID: 1499785381371224622}
   m_RootOrder: 0
@@ -249,3 +250,16 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 0
+--- !u!114 &733336029874397671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866287801953677846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c657ad8010ada49b366d8f10f2854b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agaveObject: 4
