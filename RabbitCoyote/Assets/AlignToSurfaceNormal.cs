@@ -20,12 +20,12 @@ public class AlignToSurfaceNormal : MonoBehaviour
 
             this.transform.position = hitDown.point;
             
-            Debug.Log("Did Hit Down: " + hitDown.transform.name);
+            //Debug.Log("Did Hit Down: " + hitDown.transform.name);
         }
         else
         {
             Debug.DrawLine(rayDown.origin, rayDown.origin + rayDown.direction * 10, Color.red);
-            Debug.Log("Did not Hit Down");
+            //Debug.Log("Did not Hit Down");
         }
     }
 }

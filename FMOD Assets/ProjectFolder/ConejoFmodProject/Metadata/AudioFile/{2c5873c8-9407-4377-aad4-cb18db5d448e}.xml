@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{2c5873c8-9407-4377-aad4-cb18db5d448e}">
 		<property name="assetPath">
-			<value>Coyote/Dog_Whimpering_007.wav</value>
+			<value>Coyote (Not Maguey)/Dog_Whimpering_007.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
