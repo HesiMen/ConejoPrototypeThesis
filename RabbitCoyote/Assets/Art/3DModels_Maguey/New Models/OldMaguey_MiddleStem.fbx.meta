@@ -7,7 +7,17 @@ guid: e873425be54f43845970a6213e228f33
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 4f15945b22992484c8392f6f535e712c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: transparency
+    second: {fileID: 2100000, guid: 3621a30112c4d154db54fe9e36b7dd2a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
