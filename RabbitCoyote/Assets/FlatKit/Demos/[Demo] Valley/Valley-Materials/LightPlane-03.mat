@@ -61,7 +61,7 @@ Material:
     - _CameraDistanceFadeClose: 0
     - _CameraDistanceFadeFar: 10
     - _Cutoff: 0.5
-    - _Depth: 259
+    - _Depth: 500
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -79,8 +79,8 @@ Material:
     - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UvFadeX: 1.85
-    - _UvFadeY: 2.2
+    - _UvFadeX: 10
+    - _UvFadeY: 10
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 0.20769617, b: 0, a: 1}

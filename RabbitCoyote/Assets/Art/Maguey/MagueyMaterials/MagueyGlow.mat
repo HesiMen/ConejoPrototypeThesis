@@ -31,4 +31,4 @@ Material:
     - _WaveSpeed: 1
     m_Colors:
     - Color_A9E5A7CB: {r: 1, g: 0.9607843, b: 0, a: 0}
-    - _Emission: {r: 0, g: 0.31132078, b: 0.13569388, a: 0}
+    - _Emission: {r: 0, g: 0.0048406865, b: 0.002144608, a: 0}

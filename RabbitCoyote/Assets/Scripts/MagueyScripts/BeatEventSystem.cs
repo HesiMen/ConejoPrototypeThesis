@@ -8,7 +8,8 @@ using UnityEngine.Events;
 public class MyTasksEvents : UnityEvent { }
 public class BeatEventSystem : MonoBehaviour
 {
-
+    [Header("Beat Events Go Here")]
+    [Tooltip ("Add the BeatEvents Here!")]// writing this because I(hesi)forgot where to add it
     public BeatEvent[] beatEvents;
 
     public MyTasksEvents HoldingSeeds;
@@ -68,6 +69,7 @@ public class BeatEventSystem : MonoBehaviour
                 switch (whichTask)
                 {
                     case BeatEvent.WhichTask.FiveSticks:
+                        Debug.Log("Ready To Make Fire");
                         FiveSticks.Invoke();
                         break;
 

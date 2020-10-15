@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Conejo-Coyote/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
-    path: Assets/Scenes/Conejo-Coyote/VR Sample.unity
-    guid: ae804305013648449b3afd066c343892
+    path: Assets/Scenes/Maguey/Beat1_Build.unity
+    guid: e404b09675c0f5a42a2f4d4167cf803d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a71857e11f694034fbc9cf49e68cfc9b,
       type: 2}

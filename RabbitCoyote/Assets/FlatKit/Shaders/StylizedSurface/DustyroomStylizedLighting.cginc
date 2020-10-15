@@ -62,6 +62,7 @@ half _GradientAngle;
 #endif  // DR_GRADIENT_ON
 
 half _TextureImpact;
+half _BumpImpact;
 
 sampler2D _MainTex;
 sampler2D _BumpMap;
@@ -226,7 +227,7 @@ float3 ReorientNormal(in float3 u, in float3 t, in float3 s)
 }
 
 void surfObject(InputObject IN, inout SurfaceOutputDustyroom o) {
-    half3 mapNormal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+    half3 mapNormal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap)) * _BumpImpact;
     mapNormal = UnityObjectToWorldNormal(mapNormal);
     half3 zNormal = UnityObjectToWorldNormal(half3(0, 0, 1));
     half3 blendedNormal = ReorientNormal(IN.worldNormal, mapNormal, zNormal);

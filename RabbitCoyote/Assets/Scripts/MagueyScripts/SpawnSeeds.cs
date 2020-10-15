@@ -21,17 +21,20 @@ public class SpawnSeeds : MonoBehaviour
     }
 
     private int count = 0;
+    private Vector3 seedSize;
     private void OnParticleCollision(GameObject other)
     {
 
         int numCollisionEvents = seedsParticles.GetCollisionEvents(other, collisionEvents);
 
 
-        if (other.CompareTag("Player") && count < numOfSeed)//other.CompareTag("Player") && count < numOfSeed)
+        if ((other.CompareTag("Ground")|| other.CompareTag("Player")) && count < numOfSeed)//other.CompareTag("Player") && count < numOfSeed)
         {
+            var emptyGO = new GameObject();
+            emptyGO.transform.parent = null;
+            var seed = Instantiate(newSeed, collisionEvents[0].intersection,Quaternion.identity , transform);
+            seed.transform.parent = emptyGO.transform;
 
-
-            Instantiate(newSeed, collisionEvents[0].intersection,Quaternion.identity , transform);
             count++;
 
             
