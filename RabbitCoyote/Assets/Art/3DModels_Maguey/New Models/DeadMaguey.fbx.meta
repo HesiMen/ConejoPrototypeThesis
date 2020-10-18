@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 61858943f944d7541b509ad054e6cf03
+=======
 guid: e7975bbab8f6ec849b216ac30199bbb1
+>>>>>>> Maguey_ModelInt
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []

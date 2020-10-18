@@ -2,17 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
+using UnityEngine.Events;
+using UnityEngine.PlayerLoop;
 
+[Serializable]
+public class EmergeEvent : UnityEvent { }
 public class EmergeScript : MonoBehaviour
 {
+    
+
+
+  
+
+    [SerializeField]
+    private int endLoop;
+
+
     public bool _emergeOnDistance;
+    public bool _emergeOnEvent;
+    public bool _emergeNow = false;
     public float emergeTime = .5f;
     public Vector2 shakeAmmount;
     public int vibrato = 40;
     public int randomness = 20;
     [SerializeField] Transform rock;
+    [ConditionalHide("_emergeOnDistance", true)]
     [SerializeField] Transform player;
     [SerializeField] ParticleSystem dirt;
+    [ConditionalHide("_emergeOnDistance", true)]
     public float maxDistance = 4;
     public float maxHeight = 1.5f;
 
@@ -23,16 +41,32 @@ public class EmergeScript : MonoBehaviour
     bool mid = false;
 
     bool max = false;
+
+
+    public EmergeEvent StartEmerge;
+    public EmergeEvent MidEmerge;
+    public EmergeEvent EndEmerge;
+
+    public EmergeEvent EmergeShotStart;
+    public EmergeEvent EmergeShotEnd;
+
+
+   
     private void Start()
     {
+
+       
         directionShake = new Vector3(shakeAmmount.x, 0, shakeAmmount.y);
 
     }
     private void Update()
     {
 
-        if (_emergeOnDistance)
+       
+
+        if (_emergeOnDistance && !_emergeOnEvent)
         {
+
             float distanceCheck = Vector3.Distance(rock.position, player.position);
 
             if (distanceCheck < maxDistance)
@@ -43,9 +77,10 @@ public class EmergeScript : MonoBehaviour
                     if (!min)
                     {
                         Emerge(maxHeight / 4f);
-                        Debug.Log("MaxHeigh");
+                        StartEmerge.Invoke();
                         min = true;
                         dirt.Play();
+
                     }
                 }
 
@@ -54,7 +89,7 @@ public class EmergeScript : MonoBehaviour
                     if (!mid)
                     {
                         Emerge(maxHeight / 2f);
-                        Debug.Log("halfway");
+                        MidEmerge.Invoke();
                         mid = true;
                         dirt.Play();
                     }
@@ -65,7 +100,8 @@ public class EmergeScript : MonoBehaviour
                     if (!max)
                     {
                         Emerge(maxHeight);
-                        Debug.Log("max");
+
+                        EndEmerge.Invoke();
                         max = true;
                         dirt.Play();
                     }
@@ -73,14 +109,62 @@ public class EmergeScript : MonoBehaviour
             }
 
 
+
         }
+
+        if (_emergeOnEvent && !_emergeOnDistance && _emergeNow)
+        {
+
+            Emerge(maxHeight);
+            Debug.Log("max");
+            max = true;
+            dirt.Play();
+            _emergeOnEvent = false;
+
+        }
+
+
+    }
+
+    public void EmergeNowEventActive()
+    {
+        _emergeNow = true;
     }
 
     private void Emerge(float ammountY)
     {
+
+
+
+        
+
         Sequence emergeSequence = DOTween.Sequence();
 
         emergeSequence.Append(transform.DOShakePosition(emergeTime, directionShake, vibrato, randomness, false, false))
-            .Insert(0, transform.DOMoveY(ammountY, emergeTime, false));
+            .Insert(0, transform.DOMoveY(ammountY, emergeTime, false)).OnStart(StartedEmerge).OnComplete(FinishedEmerge);
+
+
     }
+
+
+
+    private void FinishedEmerge()
+    {
+        EmergeShotEnd.Invoke();
+        //endLoop = 1;
+        // stoneRise.setParameterByName("EndStoneLoop", endLoop);
+    }
+
+    private void StartedEmerge()
+    {
+        EmergeShotStart.Invoke();
+
+
+        // endLoop = 0;
+        // stoneRise.setParameterByName("EndStoneLoop", endLoop);
+
+
+    }
+
+   
 }

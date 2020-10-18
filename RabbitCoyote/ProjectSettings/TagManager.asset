@@ -8,7 +8,8 @@ TagManager:
   - Coyote
   - Collectible
   - Bunny
-  - Maguey
+  - Ground
+  - Component
   layers:
   - Default
   - TransparentFX
@@ -23,11 +24,11 @@ TagManager:
   - Collectible
   - Plant
   - Body
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grab
+  - Hole
+  - Mask
+  - SeedsOnHole
+  - InstructionRock
   - 
   - 
   - Animal
