@@ -4,13 +4,20 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 using UnityEngine.Events;
+using UnityEngine.PlayerLoop;
 
 [Serializable]
 public class EmergeEvent : UnityEvent { }
 public class EmergeScript : MonoBehaviour
 {
-
     
+
+
+  
+
+    [SerializeField]
+    private int endLoop;
+
 
     public bool _emergeOnDistance;
     public bool _emergeOnEvent;
@@ -40,16 +47,26 @@ public class EmergeScript : MonoBehaviour
     public EmergeEvent MidEmerge;
     public EmergeEvent EndEmerge;
 
+    public EmergeEvent EmergeShotStart;
+    public EmergeEvent EmergeShotEnd;
+
+
+   
     private void Start()
     {
+
+       
         directionShake = new Vector3(shakeAmmount.x, 0, shakeAmmount.y);
 
     }
     private void Update()
     {
-        
+
+       
+
         if (_emergeOnDistance && !_emergeOnEvent)
         {
+
             float distanceCheck = Vector3.Distance(rock.position, player.position);
 
             if (distanceCheck < maxDistance)
@@ -63,6 +80,7 @@ public class EmergeScript : MonoBehaviour
                         StartEmerge.Invoke();
                         min = true;
                         dirt.Play();
+
                     }
                 }
 
@@ -82,7 +100,7 @@ public class EmergeScript : MonoBehaviour
                     if (!max)
                     {
                         Emerge(maxHeight);
-                        
+
                         EndEmerge.Invoke();
                         max = true;
                         dirt.Play();
@@ -91,16 +109,21 @@ public class EmergeScript : MonoBehaviour
             }
 
 
+
         }
 
-        if(_emergeOnEvent && !_emergeOnDistance && _emergeNow)
+        if (_emergeOnEvent && !_emergeOnDistance && _emergeNow)
         {
+
             Emerge(maxHeight);
             Debug.Log("max");
             max = true;
             dirt.Play();
             _emergeOnEvent = false;
+
         }
+
+
     }
 
     public void EmergeNowEventActive()
@@ -110,9 +133,38 @@ public class EmergeScript : MonoBehaviour
 
     private void Emerge(float ammountY)
     {
+
+
+
+        
+
         Sequence emergeSequence = DOTween.Sequence();
 
         emergeSequence.Append(transform.DOShakePosition(emergeTime, directionShake, vibrato, randomness, false, false))
-            .Insert(0, transform.DOMoveY(ammountY, emergeTime, false));
+            .Insert(0, transform.DOMoveY(ammountY, emergeTime, false)).OnStart(StartedEmerge).OnComplete(FinishedEmerge);
+
+
     }
+
+
+
+    private void FinishedEmerge()
+    {
+        EmergeShotEnd.Invoke();
+        //endLoop = 1;
+        // stoneRise.setParameterByName("EndStoneLoop", endLoop);
+    }
+
+    private void StartedEmerge()
+    {
+        EmergeShotStart.Invoke();
+
+
+        // endLoop = 0;
+        // stoneRise.setParameterByName("EndStoneLoop", endLoop);
+
+
+    }
+
+   
 }

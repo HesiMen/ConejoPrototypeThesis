@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeedsHolePhysics : MonoBehaviour
+public class SeedsHolePhysics : BeatEvent
 {
-   
+
+    public float secondsToWaitEvent = 3f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,6 +13,9 @@ public class SeedsHolePhysics : MonoBehaviour
         {
             Debug.Log(other.gameObject.name);
             other.gameObject.layer = 14;
+
+            StartCoroutine(SeedWasPlanted(secondsToWaitEvent));
+
         }
     }
 
@@ -21,5 +25,16 @@ public class SeedsHolePhysics : MonoBehaviour
         {
             other.gameObject.layer = 13;
         }
+    }
+
+
+
+    
+    IEnumerator SeedWasPlanted(float seconds)
+    {
+
+        yield return new WaitForSeconds(seconds);
+
+        TaskDone();
     }
 }
