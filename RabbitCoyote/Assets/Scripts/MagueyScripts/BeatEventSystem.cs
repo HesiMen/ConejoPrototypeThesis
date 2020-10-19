@@ -15,6 +15,7 @@ public class BeatEventSystem : MonoBehaviour
     public MyTasksEvents HoldingSeeds;
     public MyTasksEvents PlantingSeeds;
     public MyTasksEvents PlantingReward;
+    public MyTasksEvents RewardInStone;
     public MyTasksEvents FiveSticks;
     public MyTasksEvents FireStickAndStickReady;
     public MyTasksEvents StickToMakeFire;
@@ -61,6 +62,11 @@ public class BeatEventSystem : MonoBehaviour
                     case BeatEvent.WhichTask.PlantingReward:
                         PlantingReward.Invoke();
                         break;
+
+                    case BeatEvent.WhichTask.RewardInStone:
+                        RewardInStone.Invoke();
+                        break;
+
                 }
                 break;
 
