@@ -39,4 +39,18 @@ public class XROffsetGrabInteractable : XRGrabInteractable
         base.OnSelectEnter(interactor);
     }
 
+
+    //protected override void OnSelectExit(XRBaseInteractor interactor)
+    //{
+    //    base.OnSelectExit(interactor);
+
+
+
+    //    if(this.gameObject.GetComponent<AgaveObject>().agaveObject == AgaveObject.AgaveObjectsInteractables.SmallRock)
+    //    {
+    //        GetComponent<Rigidbody>().isKinematic = true;
+    //    }
+
+ //   }
+   
 }

@@ -14,7 +14,8 @@ public class FireReadyEvent : BeatEvent
         if (agaveObjects.Count > 3)
         {
             TaskDone();
-            countText.text = "Ready to make Fire";
+            if (countText != null)
+                countText.text = "Ready to make Fire";
 
         }
         else
@@ -27,8 +28,8 @@ public class FireReadyEvent : BeatEvent
                 {
                     agaveObjects.Add(agaveObject);
                 }
-
-                countText.text = agaveObjects.Count.ToString();
+                if (countText != null)
+                    countText.text = agaveObjects.Count.ToString();
 
             }
         }
@@ -47,7 +48,8 @@ public class FireReadyEvent : BeatEvent
                 agaveObjects.Remove(agaveObject);
             }
 
-            countText.text = agaveObjects.Count.ToString();
+            if (countText != null)
+                countText.text = agaveObjects.Count.ToString();
         }
     }
 }
