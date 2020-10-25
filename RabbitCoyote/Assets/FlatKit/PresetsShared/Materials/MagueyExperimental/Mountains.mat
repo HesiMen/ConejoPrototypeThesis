@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Mountains
   m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
-  m_ShaderKeywords: _CELPRIMARYMODE_SINGLE _FLAT_RIM_ENABLED _FLAT_SHADOWS_ENABLED
-    _FLAT_SPECULAR_ENABLED _TEXTUREBLENDINGMODE_MULTIPLY _UNITYSHADOWMODE_MULTIPLY
+  m_ShaderKeywords: _CELPRIMARYMODE_STEPS _FLAT_RIM_ENABLED _FLAT_SHADOWS_ENABLED
+    _FLAT_SPECULAR_ENABLED _TEXTUREBLENDINGMODE_ADD _UNITYSHADOWMODE_MULTIPLY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 30, y: 15}
         m_Offset: {x: 1.5, y: 1.7}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ab026765d8966dc469ebae80b7c168bd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -69,26 +69,27 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
+    - _BumpTiling: 2
     - _CelExtraEnabled: 0
-    - _CelNumSteps: 3
-    - _CelPrimaryMode: 1
+    - _CelNumSteps: 7
+    - _CelPrimaryMode: 2
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FlatRimAmount: 0.5
-    - _FlatRimEdgeSmoothness: 0.382
+    - _FlatRimEdgeSmoothness: 0
     - _FlatRimEnabled: 1
-    - _FlatRimLightAlign: 0
-    - _FlatRimSize: 0.95
+    - _FlatRimLightAlign: 0.97
+    - _FlatRimSize: 0.04
     - _FlatShadowsEnabled: 1
     - _FlatSmoothness: 0.362
-    - _FlatSpecularEdgeSmoothness: 0
+    - _FlatSpecularEdgeSmoothness: 1
     - _FlatSpecularEnabled: 1
-    - _FlatSpecularSize: 0
+    - _FlatSpecularSize: 0.8
     - _FlatSpecularSmoothness: 0.5
     - _Flatness: 0.633
-    - _FlatnessExtra: 0.528
+    - _FlatnessExtra: 1
     - _FlatnessSecondary: 1
     - _GlossMapScale: 1
     - _Glossiness: 0
@@ -102,7 +103,7 @@ Material:
     - _GradientSize: 10
     - _GradientStart: 1.17
     - _GradientTop: 10
-    - _LightContribution: 0.248
+    - _LightContribution: 0
     - _LightFalloffSize: 0.745
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
@@ -118,9 +119,9 @@ Material:
     - _SecondaryColor: 1
     - _SecondaryColorEnabled: 1
     - _SelfShadingSize: 0.744
-    - _SelfShadingSizeExtra: 0.64
+    - _SelfShadingSizeExtra: 0.31
     - _ShadowEdgeSize: 0.179
-    - _ShadowEdgeSizeExtra: 0.2
+    - _ShadowEdgeSizeExtra: 0
     - _ShadowEdgeSmoothness: 0.01
     - _ShadowFalloff: 0.01
     - _SmoothnessTextureChannel: 0
@@ -128,12 +129,12 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _TextureBlendingMode: 0
+    - _TextureBlendingMode: 1
     - _TextureImpact: 0
     - _UVSec: 0
     - _UnityShadowMode: 1
-    - _UnityShadowPower: 1
-    - _UnityShadowSharpness: 1
+    - _UnityShadowPower: 0.26
+    - _UnityShadowSharpness: 3.87
     - _VertexColorsEnabled: 0
     - _ZWrite: 1
     m_Colors:
@@ -142,13 +143,13 @@ Material:
     - _ColorDim: {r: 0.1792453, g: 0.007909721, b: 0, a: 1}
     - _ColorDimCurve: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
     - _ColorDimExtra: {r: 0.509434, g: 0.08701028, b: 0, a: 1}
-    - _ColorDimSteps: {r: 0, g: 0, b: 0, a: 0.85}
+    - _ColorDimSteps: {r: 0.2735849, g: 0.05509451, b: 0, a: 0.85}
     - _ColorGradient: {r: 0.65, g: 0.65, b: 0.65, a: 1}
     - _ColorSecondary: {r: 1, g: 0.55879205, b: 0, a: 1}
     - _ColorShadow: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _ColorShadows: {r: 0.37835297, g: 0.4602353, b: 0.72, a: 1}
     - _EmissionColor: {r: 4.9245777, g: 0, b: 0, a: 1}
-    - _FlatRimColor: {r: 0.07596785, g: 0.07596785, b: 0.07596785, a: 0.1764706}
-    - _FlatSpecularColor: {r: 0.8301887, g: 0.7704247, b: 0.3250267, a: 1}
+    - _FlatRimColor: {r: 1, g: 0.23735598, b: 0, a: 1}
+    - _FlatSpecularColor: {r: 0.084905654, g: 0.025687791, b: 0, a: 0.12156863}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
-    - _UnityShadowColor: {r: 0.65, g: 0.65, b: 0.65, a: 1}
+    - _UnityShadowColor: {r: 1, g: 1, b: 1, a: 1}
