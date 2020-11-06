@@ -7,14 +7,18 @@ public class FireReadyEvent : BeatEvent
 {
 
     [SerializeField] Text countText;
+    public bool showText = false;
     public List<AgaveObject> agaveObjects = new List<AgaveObject>();
+
+
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Count of AgaveObjects" + agaveObjects.Count);
-        if (agaveObjects.Count > 3)
+        if (agaveObjects.Count > 2)
         {
             TaskDone();
-            if (countText != null)
+            if (showText)
                 countText.text = "Ready to make Fire";
 
         }
@@ -28,7 +32,7 @@ public class FireReadyEvent : BeatEvent
                 {
                     agaveObjects.Add(agaveObject);
                 }
-                if (countText != null)
+                if (showText)
                     countText.text = agaveObjects.Count.ToString();
 
             }
@@ -48,7 +52,7 @@ public class FireReadyEvent : BeatEvent
                 agaveObjects.Remove(agaveObject);
             }
 
-            if (countText != null)
+            if (showText)
                 countText.text = agaveObjects.Count.ToString();
         }
     }
