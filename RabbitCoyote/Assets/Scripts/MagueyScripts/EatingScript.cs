@@ -18,11 +18,11 @@ public class EatingScript : MonoBehaviour
         if (other.GetComponent<AgaveObject>() != null)
         {
             AgaveObject aObject = other.GetComponent<AgaveObject>();
-
+            //Check for when its grabed
             if (aObject._isEdible)
             {
-
-
+                //JustMakeitGo away for now.  
+                aObject.gameObject.SetActive(false);
                 if(ateEvent != null)
                 {
                     ateEvent(energyAdded);
