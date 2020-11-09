@@ -6597,7 +6597,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734861735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.203, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1077167495}
@@ -18996,7 +18996,7 @@ MonoBehaviour:
   eatingEvent: {fileID: 1908969133}
   energyDisplay: {fileID: 1411207153}
   energy: 100
-  intervalToReduceEnergyInSeconds: 60
+  intervalToReduceEnergyInSeconds: 30
   intervalToSurvive: 8
 --- !u!1001 &1434464888
 PrefabInstance:
@@ -22656,7 +22656,7 @@ PrefabInstance:
     - target: {fileID: 3132779815088134140, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.15
+      value: -9.93
       objectReference: {fileID: 0}
     - target: {fileID: 3132779815088134140, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
@@ -22666,7 +22666,7 @@ PrefabInstance:
     - target: {fileID: 3132779815088134140, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.75
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 3132779815088134140, guid: aa99262ede8135948af2751e85fafb90,
         type: 3}
@@ -25666,7 +25666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878085031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.44, y: 0.37035966, z: 16.43}
+  m_LocalPosition: {x: 14.44, y: 0.19, z: 16.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1603616763}
@@ -25716,7 +25716,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 90ad9f1ea92ae0d46b82a9e6e529623a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.03
+      value: 5.77
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90ad9f1ea92ae0d46b82a9e6e529623a,
         type: 3}
@@ -25726,7 +25726,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 90ad9f1ea92ae0d46b82a9e6e529623a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.05
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90ad9f1ea92ae0d46b82a9e6e529623a,
         type: 3}
@@ -25788,6 +25788,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 407ff4437c5abc044ace6a0f89594b63, type: 2}
+    - target: {fileID: 533193074659131909, guid: 90ad9f1ea92ae0d46b82a9e6e529623a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 930.3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 90ad9f1ea92ae0d46b82a9e6e529623a,
         type: 3}
       propertyPath: m_Name
@@ -25862,7 +25867,7 @@ MonoBehaviour:
   m_TeleportationProvider: {fileID: 0}
   m_MatchOrientation: 0
   m_TeleportTrigger: 0
---- !u!64 &1890254443
+--- !u!64 &1890254440
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
