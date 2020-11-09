@@ -263,3 +263,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agaveObject: 4
+  _isEdible: 1
