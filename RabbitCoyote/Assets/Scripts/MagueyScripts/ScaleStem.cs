@@ -14,6 +14,14 @@ public class ScaleStem : MonoBehaviour
 
 
     public StemEvent EndGrow;
+
+    public bool grow;
+    private void Start()
+    {
+        if (grow)
+            ScaleTween(goal, scaletime);
+    }
+
     public void StartScale()
     {
         ScaleTween(goal / 3f, scaletime);
@@ -27,7 +35,7 @@ public class ScaleStem : MonoBehaviour
 
     public void EndScale()
     {
-        
+
 
         transform.DOScale(goal, scaletime).OnComplete(ScaleComplete);
     }

@@ -5,15 +5,16 @@ using UnityEngine.XR;
 
 public class CraftingComponent : MonoBehaviour
 {
+    public CraftingManager manager;
     [SerializeField]
-    CraftingManager manager;
+    private List<CraftableItem> craftableItems;
     [SerializeField]
-    List<CraftableItem> craftableItems;
+    private string ComponentNameString;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GameObject.Find("Crafting Manager").GetComponent<CraftingManager>();
     }
 
     // Update is called once per frame
@@ -22,18 +23,34 @@ public class CraftingComponent : MonoBehaviour
         
     }
 
+    public void Activate()
+    {
+        manager.ActivateComponent(this);
+    }
+
+    public void Deactivate()
+    {
+        manager.DeactivateComponent(this);
+    }
+
     public void AttemptCraft()
     {
         // Loop through list of craftable items and check if this + the other component are both activated
-        if (manager.activatedComponents.Contains(this))
+        if (manager.activatedComponentOne == this || manager.activatedComponentTwo == this)
         {
             foreach (CraftableItem item in craftableItems)
             {
-                if(this == item.componentOne || this == item.componentTwo)
+                if(this.ComponentNameString == item.componentOne.ComponentNameString || this.ComponentNameString == item.componentTwo.ComponentNameString)
                 {
-                    if (manager.activatedComponents.Contains(item.componentOne) && manager.activatedComponents.Contains(item.componentTwo))
+                    if (manager.activatedComponentOne.ComponentNameString == item.componentOne.ComponentNameString &&
+                        manager.activatedComponentTwo.ComponentNameString == item.componentTwo.ComponentNameString)
                     {
-                        manager.CraftItem(item.componentOne, item.componentTwo, item);
+                        manager.CraftItem(manager.activatedComponentOne, manager.activatedComponentTwo, item);
+                    }
+                    else if (manager.activatedComponentOne.ComponentNameString == item.componentTwo.ComponentNameString && 
+                        manager.activatedComponentTwo.ComponentNameString == item.componentOne.ComponentNameString)
+                    {
+                        manager.CraftItem(manager.activatedComponentOne, manager.activatedComponentTwo, item);
                     }
                 }
             }

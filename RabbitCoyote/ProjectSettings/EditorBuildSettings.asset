@@ -5,9 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Maguey/Beat1_Build.unity
     guid: e404b09675c0f5a42a2f4d4167cf803d
+  - enabled: 1
+    path: Assets/Scenes/Maguey/Agave_BuildSetUp.unity
+    guid: 6e9c7a7841bd8c145b474bfdfe495f2b
+  - enabled: 0
+    path: Assets/Scenes/Maguey/Tests/Audio_Implementation_Test.unity
+    guid: ef42a3f77d6f74ebdb96d21f81ef8656
+  - enabled: 0
+    path: Assets/Scenes/Maguey/Model.unity
+    guid: 92caf6b51a502a14c8cc3e429e045568
+  - enabled: 0
+    path: Assets/Scenes/Maguey/AIEarhSoil.unity
+    guid: c21c9dc1c3fc6034ca262594cb8ffdc4
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a71857e11f694034fbc9cf49e68cfc9b,
       type: 2}
