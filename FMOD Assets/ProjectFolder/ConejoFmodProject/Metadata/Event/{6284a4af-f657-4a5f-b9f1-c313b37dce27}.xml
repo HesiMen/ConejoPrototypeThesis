@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{6284a4af-f657-4a5f-b9f1-c313b37dce27}">
 		<property name="name">
 			<value>WaterFoosteps</value>
@@ -183,19 +183,11 @@
 			<destination>{bd401c3f-743d-4ca6-82b7-af3a97c0647b}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{fec9ccd7-9a6a-48a6-84d7-64fbcdc5309b}</destination>
 			<destination>{0e642547-c03a-4b4a-b7ab-5d5deb835904}</destination>
+			<destination>{fec9ccd7-9a6a-48a6-84d7-64fbcdc5309b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{485cc2c8-4690-4e8a-8a86-4c655037a9fc}" />
-	<object class="AutomationPoint" id="{fec9ccd7-9a6a-48a6-84d7-64fbcdc5309b}">
-		<property name="position">
-			<value>0.86333180034891999</value>
-		</property>
-		<property name="value">
-			<value>-80</value>
-		</property>
-	</object>
 	<object class="AutomationPoint" id="{0e642547-c03a-4b4a-b7ab-5d5deb835904}">
 		<property name="position">
 			<value>0.62716573124555008</value>
@@ -205,6 +197,14 @@
 		</property>
 		<property name="curveShape">
 			<value>0.469482154</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{fec9ccd7-9a6a-48a6-84d7-64fbcdc5309b}">
+		<property name="position">
+			<value>0.86333180034891999</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
 		</property>
 	</object>
 </objects>

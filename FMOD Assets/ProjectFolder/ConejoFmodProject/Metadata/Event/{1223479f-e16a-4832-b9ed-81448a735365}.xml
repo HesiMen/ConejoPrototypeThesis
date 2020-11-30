@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{1223479f-e16a-4832-b9ed-81448a735365}">
 		<property name="name">
 			<value>Coyote_Breathing</value>
@@ -41,6 +41,9 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{00afd261-0935-4623-91a3-c2702c5ef03a}">
+		<property name="uiTrackHeight">
+			<value>28</value>
+		</property>
 		<relationship name="mixerGroup">
 			<destination>{ee44d094-2fc6-4e44-91fe-146c8f2b5fe4}</destination>
 		</relationship>
@@ -57,8 +60,15 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{96beb296-b524-4d2b-9437-45d9e61fea45}" />
-	<object class="MarkerTrack" id="{36db9a88-f8e9-47be-b371-2c954bc0c6a4}" />
+	<object class="MarkerTrack" id="{36db9a88-f8e9-47be-b371-2c954bc0c6a4}">
+		<property name="uiTrackHeight">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="GroupTrack" id="{8d999d63-3fbd-41c0-88e8-66be927958d7}">
+		<property name="uiTrackHeight">
+			<value>100</value>
+		</property>
 		<relationship name="modules">
 			<destination>{657a61fc-82a7-4710-935c-f62e1594838a}</destination>
 		</relationship>

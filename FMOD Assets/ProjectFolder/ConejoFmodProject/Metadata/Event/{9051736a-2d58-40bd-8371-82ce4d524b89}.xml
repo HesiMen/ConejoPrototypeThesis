@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{9051736a-2d58-40bd-8371-82ce4d524b89}">
 		<property name="name">
 			<value>SeedDe-Spawn</value>
