@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{aa0c60aa-721b-48b6-bf17-08dd676387b5}">
 		<property name="assetPath">
-			<value>Player/FootstepGeneric4.wav</value>
+			<value>Player/Footsteps/FootstepGeneric4.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

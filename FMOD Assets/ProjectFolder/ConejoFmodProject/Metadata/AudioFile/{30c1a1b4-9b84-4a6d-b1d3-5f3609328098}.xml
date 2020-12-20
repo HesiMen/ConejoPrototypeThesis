@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{30c1a1b4-9b84-4a6d-b1d3-5f3609328098}">
 		<property name="assetPath">
-			<value>Player/BodyTempNormal.wav</value>
+			<value>Player/Health/BodyTempNormal.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

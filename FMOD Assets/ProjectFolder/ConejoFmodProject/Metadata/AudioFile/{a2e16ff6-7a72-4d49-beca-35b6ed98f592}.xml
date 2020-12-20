@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{a2e16ff6-7a72-4d49-beca-35b6ed98f592}">
 		<property name="assetPath">
-			<value>Music_Maguey/Atahualpa Yupanqui - Los ejes de mi carreta.mp3</value>
+			<value>Music/Atahualpa Yupanqui - Los ejes de mi carreta.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

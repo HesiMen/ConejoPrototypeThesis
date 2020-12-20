@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{6ba28107-9a6d-4f2c-a449-6a028cf11539}">
 		<property name="assetPath">
-			<value>Stone/StoneLaunch.wav</value>
+			<value>Environment/Stone/StoneLaunch.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
